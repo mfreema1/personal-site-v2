@@ -1,13 +1,20 @@
 const path = require('path');
-const webpack = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
-    mode: 'production',
-    entry: './src/index.js',
+    mode: 'development',
+    entry: {
+        app: './src/index.js'
+    },
     output: {
         path: path.resolve(__dirname, './dist/'),
-        filename: 'bundle.js'
+        filename: '[name].bundle.js',
+        chunkFilename: '[name].bundle.js',
+    },
+    optimization: {
+        splitChunks: {
+            chunks: 'all'
+        }
     },
     module: {
         rules: [
@@ -23,15 +30,26 @@ module.exports = {
             },
             {
                 test: /\.css$/,
-                loader: MiniCssExtractPlugin.loader
+                use: [
+                    {
+                        loader: MiniCssExtractPlugin.loader
+                    },
+                    'css-loader'
+                ]
             }
         ]
     },
     plugins: [
-        new MiniCssExtractPlugin(),
+        new MiniCssExtractPlugin({
+            filename: '[name].css',
+            chunkFilename: '[id].css'
+        }),
         new HtmlWebpackPlugin({
             template: "./src/index.html",
             filename: "./index.html"
         })
-    ]
+    ],
+    performance: {
+        hints: process.env.NODE_ENV === 'production' ? "warning" : false
+    }
 };
