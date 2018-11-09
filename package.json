@@ -1,0 +1,35 @@
+{
+  "name": "personal-site-v2",
+  "version": "1.0.0",
+  "description": "v1 wasn't that good anyways",
+  "main": "index.js",
+  "scripts": {
+      "dev": "webpack-dev-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mfreema1/personal-site-v2.git"
+  },
+  "author": "Mark Freeman",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mfreema1/personal-site-v2/issues"
+  },
+  "homepage": "https://github.com/mfreema1/personal-site-v2#readme",
+  "dependencies": {
+    "next": "^7.0.2",
+    "react": "^16.6.1",
+    "react-dom": "^16.6.1"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.0.4",
+    "babel-preset-env": "^1.7.0",
+    "css-loader": "^1.0.1",
+    "mini-css-extract-plugin": "^0.4.4",
+    "style-loader": "^0.23.1",
+    "webpack": "^4.25.1",
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "^3.1.10"
+  }
+}
