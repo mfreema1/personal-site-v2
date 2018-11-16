@@ -1,10 +1,14 @@
 import React from 'react';
-import Header from '../components/Header';
+import NavBar from '../components/NavBar';
+import Intro from '../components/Intro';
 
 class App extends React.Component {
     render() {
         return (
-            <Header />
+            <div>
+                <NavBar />
+                <Intro />
+            </div>
         )
     }
 }
