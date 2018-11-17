@@ -3,14 +3,26 @@ h1 {
 }
 
 .selfie {
-    margin-top: 20%;
+    margin-top: 60%;
     width: 50%;
     border-radius: 50%;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
+.white-link {
+    color: #fff;
+}
+
+.white-link:hover {
+    color: #ddd;
+}
+
+.grey-backing {
+    background-color: #ddd;
+}
+
 .banner-text {
     font-family: 'Open Sans', sans-serif;
-    margin-top: 5%;
+    margin-top: 10%;
     font-size: 200%;
 }
