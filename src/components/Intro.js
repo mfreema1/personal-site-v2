@@ -8,9 +8,13 @@ class Selfie extends React.Component {
                     <Col></Col>
                     <Col className="text-center">
                         <img className="selfie" src="../static/selfie.png"></img>
-                            <p className="banner-text">My name is Mark.  I like to write code.</p>
                     </Col>
                     <Col></Col>
+                </Row>
+                <Row>
+                    <Col sm="12" md={{ size: 6, offset: 3 }} className="text-center">
+                        <p className="banner-text">My name is Mark.  I like to write code.</p>
+                    </Col>
                 </Row>
             </Container>
         )
