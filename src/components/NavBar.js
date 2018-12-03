@@ -1,5 +1,5 @@
 import React from 'react';
-import { Navbar, NavbarBrand, Nav, NavItem, NavLink, UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
+import { Navbar, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import Home from '../pages/Home';
 import About from '../pages/About';
