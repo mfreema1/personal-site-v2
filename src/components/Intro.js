@@ -1,9 +1,9 @@
 import React from 'react';
-import { Container, Row, Col } from 'reactstrap';
+import { Row, Col } from 'reactstrap';
 class Selfie extends React.Component {
     render() {
         return (
-            <Container>
+            <div>
                 <Row>
                     <Col></Col>
                     <Col className="text-center">
@@ -13,10 +13,13 @@ class Selfie extends React.Component {
                 </Row>
                 <Row>
                     <Col sm="12" md={{ size: 6, offset: 3 }} className="text-center">
-                        <p className="banner-text">My name is Mark.  I like to write code.</p>
+                        <div class="spaced">
+                            <p className="big-text special-font">My name is Mark.  I like to write code.</p>
+                            <small className="special-font">And some other stuff too => mainly Agile, Cloud, & DevOps</small>
+                        </div>
                     </Col>
                 </Row>
-            </Container>
+            </div>
         )
     }
 }

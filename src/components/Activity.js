@@ -1,26 +1,33 @@
 import React from 'react';
-import { Card, CardImg, CardText, CardBody, CardTitle, CardSubtitle, CardLink } from 'reactstrap';
+import { Card, CardHeader, CardText, CardBody, CardLink } from 'reactstrap';
+import moment from 'moment';
+
 class Activity extends React.Component {
+
+    //determine how long ago time stamp was
+    getPassedTime(stamp) {
+        return moment(stamp).fromNow();
+    }
+
     render() {
+        if(!this.props.commits) return null;
         return (
             <div>
-                <Card>
-                    <CardImg top width="100%" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180" alt="Card image cap">
-                        {/* {this.props.imgUrl} */}
-                    </CardImg>
-                    <CardBody>
-                        <CardTitle>
-                            {this.props.title}
-                        </CardTitle>
-                        <CardSubtitle>
-                            {this.props.subtitle}
-                        </CardSubtitle>
-                        <CardText>
-                            {this.props.text}
-                        </CardText>
-                        <CardLink href="#"/*href={this.props.url}*/>
-                            Check it out
+                <Card outline color="primary">
+                    <CardHeader>
+                        <CardLink target="_blank" href={`https://github.com/${this.props.repo}`}>
+                            {this.props.repo}
                         </CardLink>
+                    </CardHeader>
+                    <CardBody>
+                        <CardText>
+                            <ul className="no-margin-list">
+                                {this.props.commits.map((commit) => {
+                                return <li>{commit.message}</li>
+                                })}
+                            </ul>
+                        </CardText>
+                        <small className="text-muted">{`Pushed ${moment(this.props.createdAt).fromNow()}`}</small>
                     </CardBody>
                 </Card>
             </div>

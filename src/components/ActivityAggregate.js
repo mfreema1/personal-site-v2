@@ -5,10 +5,10 @@ class ActivityAggregate extends React.Component {
     render() {
         return (
             <Row>
-                <Col sm="12" md={{ size: 8, offset: 2 }}>
+                <Col sm="12" md={{ size: 10, offset: 1 }}>
                     <CardColumns>
                         {this.props.cards.map((card) => {
-                            return <Activity title={card.title} text={card.text} subtitle={card.subtitle} url={card.url}/>
+                            return <Activity { ...card }/>
                         })}
                     </CardColumns>
                 </Col>
