@@ -9,10 +9,13 @@ h1 {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-.heading {
-    margin-top: 10%;
-    font-size: 200%;
-    font-family: 'Open Sans', sans-serif;
+.pushed-down {
+    margin-top:10%;
+}
+
+.no-margin-list {
+    list-style: inside;
+    padding-left: 0
 }
 
 .white-link {
@@ -27,9 +30,15 @@ h1 {
     background-color: #ddd;
 }
 
-.banner-text {
-    font-size: 200%;
+.special-font {
     font-family: 'Open Sans', sans-serif;
+}
+
+.big-text {
+    font-size: 200%;
+}
+
+.spaced {
     margin-top: 10%;
     margin-bottom: 20%;
 }
