@@ -3,15 +3,13 @@ class Markdown extends React.Component {
     render() {
         return (
             // this markdown is auto-generated via the `npm run convert` script.
-            <div className="pushed-down"><h1 id="my-personal-website-a-learning-experience-">My Personal Website (A Learning Experience)</h1>
-<p>This is actually my second attempt at making a website.  For my first attempt, I didn&#39;t quite have an understanding of the web.  This time around, I&#39;m doing a little bit better, so figured I&#39;d give it a go.  This is the result.</p>
-<h2 id="technology-used">Technology Used</h2>
-<p>As mentioned above, this was really just to try my hand at some new tech.  I wanted to give React/Redux a shot, as well as some new npm packages that I thought were cool.  In total, this website uses:</p>
+            <div className="pushed-down"><h1 class="special-font big-text">My Personal Website (A Learning Experience)</h1><hr /><p>This is actually my second attempt at making a website.  For my first attempt, I didn&#39;t quite have an understanding of the web.  This time around, I&#39;m doing a little bit better, so figured I&#39;d give it a go.  This is the result.</p>
+<h3 class="special-font">Technology Used</h3><p>As mentioned above, this was really just to try my hand at some new tech.  I wanted to give React/Redux a shot, as well as some new npm packages that I thought were cool.  In total, this website uses:</p>
 <ul>
 <li>Build:<ul>
 <li>Babel</li>
 <li>Webpack</li>
-<li>Marked (Generating this page)</li>
+<li>Marked (generating this page)</li>
 </ul>
 </li>
 <li>Languages:<ul>

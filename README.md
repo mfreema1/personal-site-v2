@@ -1,8 +1,8 @@
 # My Personal Website (A Learning Experience)
 This is actually my second attempt at making a website.  For my first attempt, I didn't quite have an understanding of the web.  This time around, I'm doing a little bit better, so figured I'd give it a go.  This is the result.
 
-## Technology Used
-As mentioned above, this was really just to try my hand at some new tech.  I wanted to give React/Redux a shot, as well as some new npm packages that I thought were cool.  In total, this website uses:
+### Technology Used
+As mentioned above, this was really just to try my hand at some new tech.  I wanted to give React a shot, as well as some new npm packages that I thought were cool.  In total, this website uses:
 
 - Build:
     - Babel
@@ -17,4 +17,4 @@ As mentioned above, this was really just to try my hand at some new tech.  I wan
 
 In the future:
 - Express
-- NGINX?
+- Deployment
