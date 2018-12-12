@@ -16,7 +16,7 @@ class Home extends React.Component {
         super(props);
         this.state = {
             repos: [],
-            commits: []
+            pushes: []
         }
     }
 
@@ -25,7 +25,7 @@ class Home extends React.Component {
         //make two requests, one to the cache and one to get fresh data
         //load the cached immediately, wait for any new data
         self.addEventListener('fetch', (event) => {
-            event.respondWith(caches.open('commits')
+            event.respondWith(caches.open('pushes')
                 .then((cache) => {
                     return fetch(event.request)
                         .then((fresh) => {
@@ -36,25 +36,24 @@ class Home extends React.Component {
         });
 
         fetch('https://api.github.com/users/mfreema1/repos')
-            .then((data) => { data.json()
-                .then((json) => {
-                    this.setState({ repos: json.sort(compare).slice(0, 3)}); //go get most recent three
-                });
+            .then((data) => { return data.json() })
+            .then((json) => {
+                this.setState({ repos: json.sort(compare).slice(0, 3)}); //go get most recent three
             });
 
         fetch('https://api.github.com/users/mfreema1/events')
-            .then((data) => { data.json()
-                .then((json) => {
-                    //TODO: paginate the response
-                    const commits = (json.filter((e) => { return e.type === "PushEvent" }).map((e) => {
-                        return {
-                            repo: e.repo.name,
-                            createdAt: e.created_at,
-                            commits: e.payload.commits.map((c) => { return { message: c.message, url: c.url }})
-                        }
-                    }));
-                    this.setState({ commits: commits});
-                });
+            .then((data) => { return data.json() })
+            .then((json) => {
+                //TODO: paginate the response
+                const pushes = (json.filter((e) => { return e.type === "PushEvent" }).map((e) => {
+                    return {
+                        id: e.id,
+                        repo: e.repo.name,
+                        createdAt: e.created_at,
+                        commits: e.payload.commits.map((c) => { return { message: c.message, url: c.url }})
+                    }
+                }));
+                this.setState({ pushes });
             });
     }
 
@@ -62,7 +61,7 @@ class Home extends React.Component {
         return (
             <Container>
                 <Intro />
-                <ActivityAggregate cards={ this.state.commits }/>
+                <ActivityAggregate cards={ this.state.pushes }/>
             </Container>
         )
     }
