@@ -10,6 +10,7 @@ module.exports = {
         path: path.resolve(__dirname, './dist/'),
         filename: '[name].bundle.js',
         chunkFilename: '[name].bundle.js',
+        publicPath: '/'
     },
     optimization: {
         splitChunks: {
@@ -51,5 +52,8 @@ module.exports = {
     ],
     performance: {
         hints: process.env.NODE_ENV === 'production' ? "warning" : false
+    },
+    devServer: {
+        historyApiFallback: true
     }
 };
