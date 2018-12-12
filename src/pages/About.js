@@ -9,16 +9,14 @@ class About extends React.Component {
                     <Col sm="12" md={{ size: 10, offset: 1 }}>
                         <Heading text={"I Like to Think I have an Interesting Story"}/>
 
-                        <p>So, it shouldn't be a secret that I'm a software developer -- and a very new one at that.  I saw my first line of code in my first semester of college, and to be honest, I didn't really care for it.  I flat out didn't understand it and didn't really see the importance of it.  It wasn't until my professor offered the entire class to escape the midterm by creating a mobile application that I started experimenting with code.</p>
-                        <p>It was a simple grade calculator for the course, but the upfront learning curve would be harsh.  I had no idea what a mobile app was, and the only language I half-knew at the time was C++.  When I asked him for the best course of action, he seemed intentionally vague.  He gave me the name of a tool, Android Studio, and told me that Java, the language it uses, is a lot like C++.  Beyond that, I was on my own.</p>
-                        <p>After downloading this IDE, I jumped into coding.  I looked at how other people could pull in information from the UI as data and tried to emulate that in my project.  The Android documentation was helpful, but contained walls of jargon, class references, and Java logic that I couldn't comprehend at the time.  I decided that in order for my user to view the results of the application, I would need to open a new Activity and pass in the result.</p>
-                        <p>This proved to be a daunting task.  Time after time I ran into null pointer exceptions when trying to catch the data in the receiving activity via an Intent.  Keep in mind, I was very new to debugging at this point, so my attempts to solve this involved rebuilding the application from scratch at least once.  I must have spent at least 20 hours trying to simplify my code and figure out exactly what was the cause of this error.</p>
-                        <p>Eventually, after a couple of long nights spent over my laptop, I figured out the source of my error, and emailed the professor, eager to show him my revolutionary new calculator.  The email went something like this:</p>
-                        
-                        <p>Me: Hey professor, I've finished that app you wanted!</p>
-                        <p>Prof: Awesome! Swing by my office tonight, there's something you'll want to see.</p>
-                        
-                        <p>Upon walking in, </p>
+                        <p>I grew up on a farm in New Tripoli, Pennsylvania, which is basically the middle of nowhere.  A little before I was 10, I moved to Allentown and eventually graduated high school there.</p>
+                        <p>Being around tractors and other heavy equipment, I developed an appreciation for machinery and the physics behind it, so I was dead-set on being a Mechanical Engineer.  I decided to attend Stevens Institute of Technology, declaring this as my major.</p>
+                        <p>All engineers had to take an introductory programming course -- E-115, taught by a very special professor.  Through his class, I saw my first line of code, and eventually created a calculator mobile app to get out of the midterm.</p>
+                        <p>This project came with a catch though -- he reasoned that since we gladly spent 20 hours making a calculator instead of 2 hours studying for his midterm, we must be crazy, or at least determined -- both of which are perfect for entrepreneurs.</p>
+                        <p>I was offered the opportunity to join a digital healthcare startup as an Android developer, which I ended up doing for a little over a year.  Through this, I rubbed elbows with some very talented developers, and learned a little bit more about what it meant to write code.</p>
+                        <p>In that year, I switched my major to Software Engineering, and have been writing code ever since.  I've tried my hand at a large chunk of the spectrum, dabbling in machine learning, system administration, mobile development, web development, and more.</p>
+                        <p>I've had some incredible teachers and advisors along the way, who have shown me the value of continuous learning in software.  By trying new things, I think I tend to narrow down into what I like most, which at the time of this writing are Agile, cloud, and DevOps.</p>
+                        <p>For now, I'm just having fun and trying to create software that helps people.</p>
                     </Col>
                 </Row>
             </Container>
