@@ -12,7 +12,7 @@ class Activity extends React.Component {
     render() {
         if(!this.props.commits) return null;
         return (
-            <div>
+            <div key={this.props.id}>
                 <Card outline color="primary">
                     <CardHeader>
                         <CardLink target="_blank" href={`https://github.com/${this.props.repo}`}>
