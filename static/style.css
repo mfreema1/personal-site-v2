@@ -1,5 +1,7 @@
-h1 {
-    color: red;
+div.custom-paragraphs > p {
+    margin-bottom: 5%;
+    font-size: 150%;
+    font-family: 'Merriweather', serif;
 }
 
 .selfie {
@@ -18,6 +20,10 @@ h1 {
     padding-left: 0
 }
 
+.no-margin-bottom {
+    margin-bottom: 0;
+}
+
 .white-link {
     color: #fff;
 }
@@ -31,15 +37,27 @@ h1 {
 }
 
 .special-font {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Merriweather Sans', sans-serif;
+}
+
+.huge-text {
+    font-size: 300%;
+}
+
+.bigger-text {
+    font-size: 250%;
 }
 
 .big-text {
     font-size: 200%;
 }
 
+.somewhat-big-text {
+    font-size: 150%;
+}
+
 .spaced {
-    margin-top: 10%;
+    margin-top: 5%;
     margin-bottom: 20%;
 }
 
@@ -50,4 +68,19 @@ h1 {
 .card-enter.card-enter-active {
     opacity: 1;
     transition: opacity 300ms ease-in;
+}
+
+div.resume-group > p {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+div.resume-group {
+    margin-top: 5%;
+}
+
+.bolded {
+    font-weight: bold;
 }
