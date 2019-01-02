@@ -12,10 +12,11 @@ class Selfie extends React.Component {
                     <Col></Col>
                 </Row>
                 <Row>
-                    <Col sm="12" md={{ size: 6, offset: 3 }} className="text-center">
+                    <Col sm="12" md={{ size: 8, offset: 2 }} className="text-center">
                         <div class="spaced">
-                            <p className="big-text special-font">My name is Mark.  I like to write code.</p>
-                            <small className="special-font">And some other stuff too => mainly Agile, Cloud, & DevOps</small>
+                            <p className="bigger-text special-font no-margin-bottom">My name is Mark.</p>
+                            <p className="bigger-text special-font"> I like to write code.</p>
+                            <small className="pushed-down special-font">(And some other stuff too => mainly Agile, Cloud, & DevOps)</small>
                         </div>
                     </Col>
                 </Row>
