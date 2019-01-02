@@ -1,0 +1,145 @@
+{
+    "contactInfo": {
+        "name": "Mark Freeman",
+        "phone": "(+1) 610-428-6898",
+        "email": "mfreema1@stevens.edu",
+        "github": "github.com/mfreema1",
+        "linkedin": "linkedin.com/in/mfreema1"
+    },
+    "education": {
+        "school": "Stevens Institute of Technology",
+        "degree": "Bachelor of Engineering in Software Engineering, Minor in Finance",
+        "location": "Hoboken, NJ",
+        "graduationDate": "May 2020",
+        "gpa": 3.79,
+        "honors": [
+            "Grow with Google Scholar", 
+            "Innovation and Entrepreneurship Scholar", 
+            "Stevens Presidential Scholarship", 
+            "Dean’s List", 
+            "Venture Hacks Fall 2016 and Spring 2017 hackathon winner", 
+            "Venture Hacks Fall 2017 speaker", 
+            "Venture Hacks 2018 director"
+        ],
+        "activities": [
+            "Teaching Assistant - Intro to Programming", 
+            "Venture Hacks", 
+            "Attila’s Entrepreneurs", 
+            "Stevens Venture Center"
+        ]
+    },
+    "employment": [
+        {
+            "employer": "Prudential Financial, Inc.",
+            "location": "Newark, NJ",
+            "start": "06/18",
+            "end": "12/18",
+            "tasks": [
+                "Developed API proxies in Apigee for enforcing policies on inbound and outbound traffic through various applications. ",
+                "Automated a series of internal form workflows using an API backend developed with Java SMTP clients and AWS Lambda.",
+                "Implemented information extraction from X.509 certificates for mutual authentication using Java, Python, and JavaScript.",
+                "Created cloud-based notebook application for contrasting Apigee development techniques with Amazon Web Services."
+            ]
+        },
+        {
+            "employer": "Willkie Farr & Gallagher LLP",
+            "location": "New York, NY",
+            "start": "02/18",
+            "end": "06/18",
+            "tasks": [
+                "Developed cross-platform expense reporting application using Kony Visualizer to automate 1,500 monthly expense reports.",
+                "Researched and implemented image segmentation for receipt image splitting using Python, Scikit-Learn, and Flask.",
+                "Communicated project progress and expectations with full stack development team and product owner using Agile."
+            ]
+        },
+        {
+            "employer": "Vaco LLC",
+            "location": "Hoboken, NJ",
+            "start": "10/17",
+            "end": "02/18",
+            "tasks": [
+                "Collaborated with Google to bring cloud technologies such as compute and serverless to campus.",
+                "Led multiple campus-wide events such as tech talks and live demos to collect information for improving Google products.",
+                "Held weekly office hours open to all students and faculty for personal, hands-on mentorship in cloud technology."
+            ]
+        },
+        {
+            "employer": "Caring Friends (Startup)",
+            "location": "Hoboken, NJ",
+            "start": "10/16",
+            "end": "10/17",
+            "tasks": [
+                "Communicated project goals, deadlines, and expectations with senior entrepreneurial lead and graphic designer.",
+                "Helped lead startup business efforts such as conducting 70+ customer research interviews in areas around Hoboken.",
+                "Architected, developed, and deployed Android application with AWS and Firebase for use by employees."
+            ]
+        },
+        {
+            "employer": "Innovation and Entrepreneurship Research Program",
+            "location": "Hoboken, NJ",
+            "start": "5/17",
+            "end": "8/17",
+            "tasks": [
+                "Developed Android library aimed at assisting early-stage startup teams with Android networking with low investment.",
+                "Reported weekly progress to academic advisor in entrepreneurship, both orally and in written format.",
+                "Led customer research interviews to gain knowledge of problems facing startup teams in terms of data acquisition."
+            ]
+        }
+    ],
+    "skills": {
+        "operatingSystems": [
+            "Linux (Debian & CentOS) / UNIX",
+            "Windows 7 / 10",
+            "Android"
+        ],
+        "software": [
+            "Amazon Web Services",
+            "Android Studio",
+            "Apigee", 
+            "Node.js",
+            "React.js", 
+            "Express.js", 
+            "Git / Github", 
+            "Travis CI", 
+            "PyTest", 
+            "Jest", 
+            "shell",
+            "VirtualBox", 
+            "package managers", 
+            "Jupyter Notebook", 
+            "Eclipse", 
+            "Firebase", 
+            "Bootstrap", 
+            "Flask", 
+            "Django"
+        ],
+        "concepts": [
+            "Data structures", 
+            "algorithms", 
+            "APIs", 
+            "HTTP", 
+            "OAuth", 
+            "Big-O analysis", 
+            "Agile development", 
+            "continuous integration", 
+            "testing"
+        ],
+        "languages": [
+            "JavaScript (ES6)", 
+            "Python", 
+            "Java", 
+            "C++", 
+            "Bash", 
+            "HTML", 
+            "CSS", 
+            "JSON", 
+            "YAML", 
+            "XML"
+        ],
+        "certifications": [
+            "CompTIA A+", 
+            "Udacity Android Basics in partnership with Google", 
+            "studying for AWS CSD & CSA"
+        ]
+    }
+}
