@@ -8,7 +8,7 @@ class Other extends React.Component {
         return (
             <Container>
                 <Row>
-                    <Col sm="12" md={{ size: 10, offset: 1 }}>
+                    <Col>
                         <Markdown className="pushed-down"/>
                     </Col>
                 </Row>
