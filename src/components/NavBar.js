@@ -12,16 +12,16 @@ class Header extends React.Component {
             <Router>
                 <div>
                     <Navbar className="navbar-dark bg-dark">
-                        <NavbarBrand><Link className="white-link" to="/">Mark Freeman</Link></NavbarBrand>
+                        <NavbarBrand><Link className="white-link special-font" to="/">Mark Freeman</Link></NavbarBrand>
                             <Nav className="ml-auto">
                                 <NavItem>
-                                    <NavLink><Link className="white-link" to="/about/">About</Link></NavLink>
+                                    <NavLink><Link className="white-link special-font" to="/about/">About</Link></NavLink>
                                 </NavItem>
                                 <NavItem>
-                                    <NavLink><Link className="white-link" to="/resume/">Resume</Link></NavLink>
+                                    <NavLink><Link className="white-link special-font" to="/resume/">Resume</Link></NavLink>
                                 </NavItem>
                                 <NavItem>
-                                    <NavLink><Link className="white-link" to="/other/">Other</Link></NavLink>
+                                    <NavLink><Link className="white-link special-font" to="/other/">Other</Link></NavLink>
                                 </NavItem>
                             </Nav>
                     </Navbar>
