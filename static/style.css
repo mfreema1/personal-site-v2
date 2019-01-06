@@ -11,13 +11,21 @@ div.custom-paragraphs > p {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
+.bottom-space {
+    margin-bottom: 5%;
+}
+
 .pushed-down {
-    margin-top:10%;
+    margin-top: 10%;
 }
 
 .no-margin-list {
     list-style: inside;
     padding-left: 0
+}
+
+.no-bullet-list {
+    list-style-type: none;
 }
 
 .no-margin-bottom {
@@ -70,7 +78,7 @@ div.custom-paragraphs > p {
     transition: opacity 300ms ease-in;
 }
 
-div.resume-group > p {
+div.resume-group > p, li.bottom-space > p {
     margin-top: 0;
     margin-bottom: 0;
     padding-top: 0;
