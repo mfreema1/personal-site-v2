@@ -28,7 +28,7 @@
             "Stevens Venture Center"
         ]
     },
-    "employment": [
+    "experience": [
         {
             "employer": "Prudential Financial, Inc.",
             "location": "Newark, NJ",
@@ -87,12 +87,12 @@
         }
     ],
     "skills": {
-        "operatingSystems": [
+        "Operating Systems": [
             "Linux (Debian & CentOS) / UNIX",
             "Windows 7 / 10",
             "Android"
         ],
-        "software": [
+        "Software": [
             "Amazon Web Services",
             "Android Studio",
             "Apigee", 
@@ -113,7 +113,7 @@
             "Flask", 
             "Django"
         ],
-        "concepts": [
+        "Concepts": [
             "Data structures", 
             "algorithms", 
             "APIs", 
@@ -124,7 +124,7 @@
             "continuous integration", 
             "testing"
         ],
-        "languages": [
+        "Languages": [
             "JavaScript (ES6)", 
             "Python", 
             "Java", 
@@ -136,7 +136,7 @@
             "YAML", 
             "XML"
         ],
-        "certifications": [
+        "Certifications": [
             "CompTIA A+", 
             "Udacity Android Basics in partnership with Google", 
             "studying for AWS CSD & CSA"

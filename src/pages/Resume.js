@@ -4,7 +4,7 @@ import { Container, Row, Col } from 'reactstrap';
 const resume = require('../misc/resume');
 const contact = resume.contactInfo;
 const education = resume.education;
-const employment = resume.employment;
+const experience = resume.experience;
 const skills = resume.skills;
 
 const commaString = (lst) => {
@@ -25,16 +25,41 @@ class Resume extends React.Component {
                             <h3 className="bolded">Contact Info</h3>
                             <p>{contact.name}</p>
                             <p>{contact.phone}</p>
+                            <p>{contact.email}</p>
                             <p><a href={'http://www.' + contact.github}>{contact.github}</a></p>
                             <p><a href={'http://www.' + contact.github}>{contact.linkedin}</a></p>
                         </div>
                         <div className="resume-group">
                             <h3 className="bolded">Education</h3>
-                            <p>{education.school} - {education.location}</p>
+                            <p><span className="bolded">{education.school}</span> - {education.location}</p>
                             <p>{education.degree} expected {education.graduationDate}</p>
                             <p className="bolded">GPA: {education.gpa}</p>
                             <p><span className="bolded">Honors: </span>{commaString(education.honors)}</p>
                             <p><span className="bolded">Activities: </span>{commaString(education.activities)}</p>
+                        </div>
+                        <div className="resume-group">
+                            <h3 className="bolded">Experience</h3>
+                            <ul className="no-margin-list no-bullet-list">
+                            {experience.map((e) => (
+                                <li className="bottom-space">
+                                    <p><span className="bolded">{e.employer}</span> - {e.start} to {e.end}</p>
+                                    <p>{e.location}</p>
+                                    <ul className="no-margin-list">
+                                        {e.tasks.map((t) => (
+                                            <li>
+                                                {t}
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </li>
+                            ))}    
+                            </ul>
+                        </div>
+                        <div className="resume-group">
+                            <h3 className="bolded">Skills</h3>
+                            {Object.keys(skills).map((key) => (
+                                <p><span className="bolded">{key}: </span>{skills[key].join(', ')}</p>
+                            ))}
                         </div>
                     </Col>
                 </Row>
