@@ -1,7 +1,11 @@
 div.custom-paragraphs > p {
     margin-bottom: 5%;
     font-size: 150%;
-    font-family: 'Merriweather', serif;
+    font-family: 'PT Serif', serif;
+}
+
+.body-font {
+    font-family: 'PT Serif', serif
 }
 
 .selfie {
@@ -45,7 +49,8 @@ div.custom-paragraphs > p {
 }
 
 .special-font {
-    font-family: 'Merriweather Sans', sans-serif;
+    font-family: 'Mukta', sans-serif;
+    font-weight: 700;
 }
 
 .huge-text {
@@ -91,4 +96,14 @@ div.resume-group {
 
 .bolded {
     font-weight: bold;
+}
+
+.shadowed {
+    box-shadow: 6px 6px 8px #ccc;
+    transition: box-shadow .3s;
+    -webkit-transition: box-shadow .3s;
+}
+
+.shadowed:hover {
+    box-shadow: 3px 3px 4px #ccc;
 }
