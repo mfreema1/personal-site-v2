@@ -23,43 +23,107 @@ class Resume extends React.Component {
                         <p>I'll also throw in a text version of it below if you're not one for formatting.</p>
                         <div className="resume-group">
                             <h3 className="bolded">Contact Info</h3>
-                            <p>{contact.name}</p>
-                            <p>{contact.phone}</p>
-                            <p>{contact.email}</p>
-                            <p><a href={'http://www.' + contact.github}>{contact.github}</a></p>
-                            <p><a href={'http://www.' + contact.github}>{contact.linkedin}</a></p>
+                            <div className="container-fluid">
+                                <div className="row">
+                                    <div className="col">
+                                        {contact.name}
+                                    </div>
+                                </div>
+                                <div className="row">
+                                    <div className="col">
+                                        {contact.phone}
+                                    </div>
+                                </div>
+                                <div className="row">
+                                    <div className="col">
+                                        {contact.email}
+                                    </div>
+                                </div>
+                                <div className="row">
+                                    <div className="col">
+                                        <a href={'http://www.' + contact.github}>{contact.github}</a>
+                                    </div>
+                                </div>
+                                <div className="row">
+                                    <div className="col">
+                                        <a href={'http://www.' + contact.github}>{contact.linkedin}</a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <div className="resume-group">
                             <h3 className="bolded">Education</h3>
-                            <p><span className="bolded">{education.school}</span> - {education.location}</p>
-                            <p>{education.degree} expected {education.graduationDate}</p>
-                            <p className="bolded">GPA: {education.gpa}</p>
-                            <p><span className="bolded">Honors: </span>{commaString(education.honors)}</p>
-                            <p><span className="bolded">Activities: </span>{commaString(education.activities)}</p>
+                            <div className="container-fluid">
+                                <div className="row">
+                                    <div className="col">
+                                        <span className="bolded">{education.school}</span>
+                                    </div>
+                                    <div className="col align-right">{education.location}</div>
+                                </div>
+                                <div className="row">
+                                    <div className="col">{education.degree}</div>
+                                    <div className="col align-right">{education.graduationDate}</div>
+                                </div>
+                                <div className="row">
+                                    <div className="col">
+                                        <span className="bolded">GPA: {education.gpa}</span>
+                                    </div>
+                                </div>
+                                <div className="row">
+                                    <div className="col">
+                                        <span className="bolded">Honors: </span>{commaString(education.honors)}
+                                    </div>
+                                </div>
+                                <div className="row">
+                                    <div className="col">
+                                        <span className="bolded">Activities: </span>{commaString(education.activities)}
+                                    </div>
+                                </div>
+                            </div>
+                            <p></p>
                         </div>
                         <div className="resume-group">
                             <h3 className="bolded">Experience</h3>
                             <ul className="no-margin-list no-bullet-list">
                             {experience.map((e) => (
-                                <li className="bottom-space">
-                                    <p><span className="bolded">{e.employer}</span> - {e.start} to {e.end}</p>
-                                    <p>{e.location}</p>
-                                    <ul className="no-margin-list">
-                                        {e.tasks.map((t) => (
-                                            <li>
-                                                {t}
-                                            </li>
-                                        ))}
-                                    </ul>
+                                <li className="bottom-space container-fluid">
+                                    <div className="row">
+                                        <div className="col bolded">
+                                            {e.employer}
+                                        </div>
+                                        <div className="col align-right">
+                                            {e.location}
+                                        </div>
+                                    </div>
+                                    <div className="row">
+                                        <div className="col-10">
+                                        <ul className="no-margin-list">
+                                                {e.tasks.map((t) => (
+                                                    <li>
+                                                        {t}
+                                                    </li>
+                                                ))}
+                                            </ul>
+                                        </div>
+                                        <div className="col align-right">
+                                            {e.start} - {e.end}
+                                        </div>
+                                    </div>
                                 </li>
                             ))}    
                             </ul>
                         </div>
                         <div className="resume-group">
                             <h3 className="bolded">Skills</h3>
-                            {Object.keys(skills).map((key) => (
-                                <p><span className="bolded">{key}: </span>{skills[key].join(', ')}</p>
-                            ))}
+                            <div className="container-fluid">
+                                {Object.keys(skills).map((key) => (
+                                    <div className="row">
+                                        <div className="col">
+                                            <span className="bolded">{key}: </span>{skills[key].join(', ')}
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
                         </div>
                     </Col>
                 </Row>
