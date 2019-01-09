@@ -10,7 +10,7 @@ module.exports = {
         path: path.resolve(__dirname, './dist/'),
         filename: '[name].bundle.js',
         chunkFilename: '[name].bundle.js',
-        publicPath: '/'
+        publicPath: '/static/'
     },
     optimization: {
         splitChunks: {
@@ -36,6 +36,12 @@ module.exports = {
                         loader: MiniCssExtractPlugin.loader
                     },
                     'css-loader'
+                ]
+            },
+            {
+                test: /\.(png|svg|jpg|gif|pdf)$/,
+                use: [
+                    'file-loader'
                 ]
             }
         ]
