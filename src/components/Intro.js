@@ -7,7 +7,7 @@ class Selfie extends React.Component {
                 <Row>
                     <Col></Col>
                     <Col className="text-center">
-                        <img className="selfie" src="../static/selfie.png"></img>
+                        <img className="selfie" src="/static/selfie.png"></img>
                     </Col>
                     <Col></Col>
                 </Row>
