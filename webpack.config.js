@@ -1,6 +1,7 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 module.exports = {
     mode: 'development',
     entry: {
@@ -10,7 +11,7 @@ module.exports = {
         path: path.resolve(__dirname, './dist/'),
         filename: '[name].bundle.js',
         chunkFilename: '[name].bundle.js',
-        publicPath: '/static/'
+        publicPath: '/'
     },
     optimization: {
         splitChunks: {
@@ -54,7 +55,8 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: "./src/index.html",
             filename: "./index.html"
-        })
+        }),
+        new CopyWebpackPlugin([{ from: 'static', to: 'static' }])
     ],
     performance: {
         hints: process.env.NODE_ENV === 'production' ? "warning" : false
