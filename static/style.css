@@ -4,6 +4,11 @@ div.custom-paragraphs > p {
     font-family: 'PT Serif', serif;
 }
 
+ul.custom-list > li {
+    font-size: 150%;
+    font-family: 'PT Serif', serif;
+}
+
 .body-font {
     font-family: 'PT Serif', serif
 }
@@ -13,6 +18,10 @@ div.custom-paragraphs > p {
     width: 50%;
     border-radius: 50%;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.small-bottom-space {
+    margin-bottom: 2%;
 }
 
 .bottom-space {
@@ -104,4 +113,12 @@ div.resume-group {
 
 .align-right {
     text-align: right;
+}
+
+.italics {
+    font-style: italic;
+}
+
+ {
+    
 }
