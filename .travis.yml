@@ -5,9 +5,9 @@ node_js:
 cache: npm
 install:
   - npm install
-  - npm install -g webpack webpack-cli
+  - npm install -g npx webpack-cli
 script:
-  - webpack
+  - npx webpack
 deploy:
   provider: s3
   skip_cleanup: true
