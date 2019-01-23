@@ -4,7 +4,8 @@
         "phone": "(+1) 610-428-6898",
         "email": "mfreema1@stevens.edu",
         "github": "github.com/mfreema1",
-        "linkedin": "linkedin.com/in/mfreema1"
+        "linkedin": "linkedin.com/in/mfreema1",
+        "site": "mrkfrmn.com"
     },
     "education": {
         "school": "Stevens Institute of Technology",
@@ -31,6 +32,7 @@
     "experience": [
         {
             "employer": "Prudential Financial, Inc.",
+            "role": "Enterprise Architecture Intern",
             "location": "Newark, NJ",
             "start": "06/18",
             "end": "12/18",
@@ -43,6 +45,7 @@
         },
         {
             "employer": "Willkie Farr & Gallagher LLP",
+            "role": "Application Development Intern",
             "location": "New York, NY",
             "start": "02/18",
             "end": "06/18",
@@ -54,6 +57,7 @@
         },
         {
             "employer": "Vaco LLC",
+            "role": "Google Cloud Student Innovator for Vaco at Google",
             "location": "Hoboken, NJ",
             "start": "10/17",
             "end": "02/18",
@@ -65,6 +69,7 @@
         },
         {
             "employer": "Caring Friends (Startup)",
+            "role": "Co-Founder & Android Developer",
             "location": "Hoboken, NJ",
             "start": "10/16",
             "end": "10/17",
@@ -76,6 +81,7 @@
         },
         {
             "employer": "Innovation and Entrepreneurship Research Program",
+            "role": "Android Researcher",
             "location": "Hoboken, NJ",
             "start": "5/17",
             "end": "8/17",

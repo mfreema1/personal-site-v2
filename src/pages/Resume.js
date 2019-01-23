@@ -46,7 +46,12 @@ class Resume extends React.Component {
                                 </div>
                                 <div className="row">
                                     <div className="col">
-                                        <a href={'http://www.' + contact.github}>{contact.linkedin}</a>
+                                        <a href={'http://www.' + contact.linkedin}>{contact.linkedin}</a>
+                                    </div>
+                                </div>
+                                <div className="row">
+                                    <div className="col">
+                                        <a href={'http://www.' + contact.site}>{contact.site}</a>
                                     </div>
                                 </div>
                             </div>
@@ -58,10 +63,10 @@ class Resume extends React.Component {
                                     <div className="col">
                                         <span className="bolded">{education.school}</span>
                                     </div>
-                                    <div className="col align-right">{education.location}</div>
+                                    <div className="col bolded align-right">{education.location}</div>
                                 </div>
                                 <div className="row">
-                                    <div className="col">{education.degree}</div>
+                                    <div className="col-md-auto">{education.degree}</div>
                                     <div className="col align-right">{education.graduationDate}</div>
                                 </div>
                                 <div className="row">
@@ -88,25 +93,30 @@ class Resume extends React.Component {
                             {experience.map((e) => (
                                 <li className="bottom-space container-fluid">
                                     <div className="row">
-                                        <div className="col bolded">
+                                        <div className="col-md-auto bolded">
                                             {e.employer}
                                         </div>
-                                        <div className="col align-right">
+                                        <div className="col bolded align-right">
                                             {e.location}
                                         </div>
                                     </div>
                                     <div className="row">
-                                        <div className="col-10">
-                                        <ul className="no-margin-list">
+                                        <div className="col-md-auto">
+                                            {e.role}
+                                        </div>
+                                        <div className="col align-right">
+                                            {e.start} - {e.end}
+                                        </div>
+                                    </div>
+                                    <div className="row">
+                                        <div className="col">
+                                        <ul className="no-margin-list keep-indent">
                                                 {e.tasks.map((t) => (
                                                     <li>
                                                         {t}
                                                     </li>
                                                 ))}
                                             </ul>
-                                        </div>
-                                        <div className="col align-right">
-                                            {e.start} - {e.end}
                                         </div>
                                     </div>
                                 </li>
