@@ -21,7 +21,7 @@ class Activity extends React.Component {
                     </CardHeader>
                     <CardBody>
                         <CardText>
-                            <ul className="no-margin-list">
+                            <ul className="no-margin-list keep-indent">
                                 {this.props.commits.map((commit) => {
                                 return <li>{commit.message}</li>
                                 })}
