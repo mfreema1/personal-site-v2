@@ -19,7 +19,7 @@ class About extends React.Component {
                             
                             <h4 class="bolded body-font">Out of the Frying Pan</h4>
                             <p>Through some pretty incredible professors, I got to see my first line of code, and eventually switched majors to Software Engineering.  I immersed myself as much as possible off the bat -- doing hackathons, joining a startup, and taking online courseware to sharpen my skills.</p>
-                            <CaptionedImage src="/static/computer.jpg" caption="There isn't much that can beat a quiet morning of tea and code" />
+                            <CaptionedImage src="/static/computer.jpg" caption="There isn't much that can beat a quiet morning of tea and code" artistUrl="$artistUrl" artistName="$authorName"/>
                             <p>This taught me quite a bit about programming, but most importantly, I learned how to teach myself.  Nowadays, I spend my time looking at DevOps, cloud computing, and Agile methodologies.  I also write programs in my free time, and try to pick up new tools whenever possible.</p>
                             
                             <h4 class="bolded body-font">Looking Forward</h4>
@@ -29,7 +29,7 @@ class About extends React.Component {
                                 <li><a href="github.com/mfreema1/food-crawler">MyCookbook</a> - a utility to help people make their own cookbooks from their favorite recipes</li>
                                 <li><a href="github.com/mfreema1/pi-research">Raspberry Flow</a> - a research project I'm working on at my university to help see why people go where they do</li>
                             </ul>
-                            <CaptionedImage src="/static/raspberry.jpg" caption="Now if only we could figure out a way to make Raspberry Flow taste like an actual raspberry flow" />
+                            <CaptionedImage src="/static/raspberry.jpg" caption="Now if only we could make Raspberry Flow taste like an actual raspberry flow" />
                             <p>If you want to check out some of my stuff over at my <a href="github.com/mfreema1">GitHub</a> profile I'd be flattered.  I really enjoy what I do, and I'm always happy to chat about it :)</p>
                         </div>
                     </Col>
