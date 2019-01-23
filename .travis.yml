@@ -2,8 +2,9 @@ dist: trusty
 language: node_js
 node_js:
   - "10"
+cache: npm
 script:
-  - npx webpack
+  - npx webpack -y
 deploy:
   provider: s3
   skip_cleanup: true
