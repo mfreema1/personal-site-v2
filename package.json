@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "webpack-dev-server",
     "prod": "NODE_ENV=production webpack-dev-server",
-    "convert": "node convertmd.js"
+    "convert": "node convertmd.js",
+    "build": "webpack"
   },
   "repository": {
     "type": "git",
