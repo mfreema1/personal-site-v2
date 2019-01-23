@@ -5,6 +5,7 @@ import Home from '../pages/Home';
 import About from '../pages/About';
 import Resume from '../pages/Resume';
 import Other from '../pages/Other';
+import RandomTag from './RandomTag';
 class Header extends React.Component {
 
     render() {
@@ -12,7 +13,7 @@ class Header extends React.Component {
             <Router>
                 <div>
                     <Navbar className="navbar-dark bg-dark">
-                        <NavbarBrand><Link className="white-link special-font" to="/">Mark Freeman</Link></NavbarBrand>
+                        <NavbarBrand><Link className="white-link special-font" to="/"><RandomTag /></Link></NavbarBrand>
                             <Nav className="ml-auto">
                                 <NavItem>
                                     <NavLink><Link className="white-link special-font" to="/about/">About</Link></NavLink>
