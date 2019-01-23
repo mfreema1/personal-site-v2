@@ -2,7 +2,6 @@ dist: trusty
 language: node_js
 node_js:
   - "10"
-cache: npm
 script:
   - npx webpack
 deploy:
