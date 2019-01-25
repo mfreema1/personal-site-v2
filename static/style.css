@@ -1,8 +1,12 @@
 h1, h2, h3 {
-    font-family: 'Mukta', sans-serif;
+    font-family: 'Mukta', sans-serif !important;
 }
 
-p, li, h4 {
+p, h4 {
+    font-family: 'PT Serif', serif !important;
+}
+
+li {
     font-family: 'PT Serif', serif;
 }
 
