@@ -1,6 +1,7 @@
 import React from 'react';
-import Markdown from '../components/Markdown';
+// import Markdown from '../components/Markdown';
 import { Container, Row, Col } from 'reactstrap';
+const html = decodeURI(require('./otherHTMLModule'));
 
 class Other extends React.Component {
 
@@ -9,7 +10,7 @@ class Other extends React.Component {
             <Container>
                 <Row>
                     <Col>
-                        <Markdown className="pushed-down"/>
+                        <div className="pushed-down" dangerouslySetInnerHTML={{ __html: html }}/>
                     </Col>
                 </Row>
             </Container>
