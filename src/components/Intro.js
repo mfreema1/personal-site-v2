@@ -13,9 +13,9 @@ class Selfie extends React.Component {
                 </Row>
                 <Row>
                     <Col sm="12" md={{ size: 8, offset: 2 }} className="text-center">
-                        <div class="spaced">
-                            <p className="bigger-text special-font no-margin-bottom">My name is Mark.</p>
-                            <p className="bigger-text special-font"> I like to write code.</p>
+                        <div className="spaced">
+                            <h1>My name is Mark.</h1>
+                            <h1> I like to write code.</h1>
                             <small className="pushed-down special-font">(And some other stuff too => mainly Agile, Cloud, & DevOps)</small>
                         </div>
                     </Col>
