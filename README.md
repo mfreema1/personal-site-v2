@@ -39,6 +39,6 @@ to the React client by importing the html string as a module.  Since fs is stubb
         </ul>
     </div>
     <div class="col-md-auto align-right">
-        <img src="/static/books.jpg"/>
+        <img align="right" src="/static/books.jpg"/>
     </div>
 </div>
