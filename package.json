@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "NODE_ENV=development webpack-dev-server",
-    "convert": "node convertmd.js",
+    "convert": "node ./src/misc/convert.js",
     "build": "webpack"
   },
   "repository": {
@@ -20,18 +20,18 @@
   "homepage": "https://github.com/mfreema1/personal-site-v2#readme",
   "dependencies": {
     "bluebird": "^3.5.3",
-    "bootstrap": "^4.1.3",
+    "bootstrap": "^4.2.1",
     "jquery": "^3.3.1",
     "moment": "^2.22.2",
-    "next": "^7.0.2",
     "popper.js": "^1.14.5",
     "react": "^16.6.1",
     "react-addons-css-transition-group": "^15.6.2",
     "react-dom": "^16.6.1",
     "react-router-dom": "^4.3.1",
-    "reactstrap": "^6.5.0"
+    "reactstrap": "^7.1.0"
   },
   "devDependencies": {
+    "@babel/cli": "^7.2.3",
     "@babel/core": "^7.1.5",
     "@babel/preset-env": "^7.1.5",
     "@babel/preset-react": "^7.0.0",
