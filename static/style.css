@@ -11,6 +11,10 @@ li {
     font-family: 'PT Serif', serif;
 }
 
+footer {
+    color: #fff;
+}
+
 /* List elements in cards should have the sans-serif font */
 p.card-text > ul > li {
     font-family: Arial, Helvetica, sans-serif;
@@ -21,7 +25,7 @@ div.custom-paragraphs > p {
     font-size: 150%;
 }
 
-h4.spaced-paragraph {
+h4.spaced-paragraph, footer {
     margin-top: 5%;
 }
 
