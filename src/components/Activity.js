@@ -10,7 +10,7 @@ class Activity extends React.Component {
     }
 
     render() {
-        if(!this.props.commits) return null;
+        // Don't believe we perform the check here.  The aggregate should handle the check for the loader
         return (
             <div key={this.props.id}>
                 <Card outline color="primary" className="shadowed">
