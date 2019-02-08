@@ -1,3 +1,4 @@
+/* Override the default bootstrap stylings */
 h1, h2, h3 {
     font-family: 'Mukta', sans-serif !important;
 }
@@ -20,8 +21,16 @@ div.custom-paragraphs > p {
     font-size: 150%;
 }
 
+h4.spaced-paragraph {
+    margin-top: 5%;
+}
+
 ul.custom-list > li {
     font-size: 150%;
+}
+
+p.other-page :last-of-type {
+    margin-bottom: 5%;
 }
 
 .body-font {
@@ -148,3 +157,8 @@ ul.keep-indent > li {
     text-indent: -1.5em;
     padding-left: 1.5em;
 }
+
+.entire-viewport {
+    height: 50vh;
+}
+
