@@ -31,10 +31,33 @@ renderer.heading = (text, level) => {
     if(level === 1) {
         return `${openingTag(tagName, {class: ['huge-text']})}${text}${closeTag}<hr/>`;
     }
+    if(level === 4) {
+        return `${openingTag(tagName, {class: ['bolded', 'spaced-paragraph']})}${text}${closeTag}`;
+    }
     else {
         return `${openingTag(tagName)}${text}${closeTag}`;
     }
 }
+
+renderer.paragraph = (text) => {
+    const tagName = 'p';
+    const closeTag = closingTag(tagName);
+    return `${openingTag(tagName, {class: ['somewhat-big-text']})}${text}${closeTag}`;
+}
+
+const convert = async() => {
+    const fileLocation = path.join(__dirname, '..', '..', 'README.md');
+    try {
+        const markdown = await fs.readFileAsync(fileLocation, 'utf-8');
+        await fs.writeFileAsync(path.join(__dirname, 'README.js'), `module.exports = "${encodeURI(marked(markdown, { renderer }))}"`)
+        console.log('Successfully wrote HTML to module')
+    }
+    catch(e) {
+        console.log('Could not write HTML to module:\n' + e);
+    }
+}
+
+convert();
 
 // allowed renderer methods:
 // ---
@@ -58,16 +81,3 @@ renderer.heading = (text, level) => {
 // link(string href, string title, string text)
 // image(string href, string title, string text)
 // text(string text)
-
-const convert = async() => {
-    const fileLocation = path.join(__dirname, '..', '..', 'README.md');
-    try {
-        const markdown = await fs.readFileAsync(fileLocation, 'utf-8');
-        await fs.writeFileAsync(path.join(__dirname, 'README.js'), `module.exports = "${encodeURI(marked(markdown, { renderer }))}"`)
-    }
-    catch(e) {
-        console.log('Could not write HTML to module:\n' + e);
-    }
-}
-
-convert();
