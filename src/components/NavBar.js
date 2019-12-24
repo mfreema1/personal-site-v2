@@ -20,7 +20,8 @@ class Header extends React.Component {
                                         <NavLink><Link className="white-link special-font" to="/about/">About</Link></NavLink>
                                     </NavItem>
                                     <NavItem>
-                                        <NavLink><Link className="white-link special-font" to="/resume/">Resume</Link></NavLink>
+                                        <NavLink><a className="white-link special-font" href="/static/resume.pdf">Resume</a></NavLink>
+                                        {/* <NavLink><Link className="white-link special-font" to="/resume/">Resume</Link></NavLink> */}
                                     </NavItem>
                                     <NavItem>
                                         <NavLink><Link className="white-link special-font" to="/other/">Other</Link></NavLink>
@@ -29,7 +30,7 @@ class Header extends React.Component {
                         </Navbar>
                         <Route exact path="/" component={Home}/>
                         <Route path="/about/" component={About}/>
-                        <Route path="/resume/" component={Resume}/>
+                        {/* <Route path="/resume/" component={Resume}/> */}
                         <Route path="/other/" component={Other}/>
                     </div>
                 </Router>

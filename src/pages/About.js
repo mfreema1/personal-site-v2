@@ -20,17 +20,17 @@ class About extends React.Component {
                             <h4 class="bolded body-font">Out of the Frying Pan</h4>
                             <p>Through some pretty incredible professors, I got to see my first line of code, and eventually switched majors to Software Engineering.  I immersed myself as much as possible off the bat -- doing hackathons, joining a startup, and taking online courseware to sharpen my skills.</p>
                             <CaptionedImage src="/static/computer.jpg" caption="There isn't much that can beat a quiet morning of tea and code" artistUrl="https://unsplash.com/@clemhlrdt" artistName="Clément H"/>
-                            <p>This taught me quite a bit about programming, but most importantly, I learned how to teach myself.  Nowadays, I spend my time looking at DevOps, cloud computing, and Agile methodologies.  I also write programs in my free time, and try to pick up new tools whenever possible.</p>
+                            <p>This taught me quite a bit about programming, but most importantly, I learned how to teach myself.  Nowadays, I spend my time looking at systems, both data and task parallel.  I read about these topics quite a bit.  In the future, I want to add a page here to go over some of my thoughts on what I've read.  I also write programs in my free time, and try to pick up new tools whenever possible.</p>
                             
                             <h4 class="bolded body-font">Looking Forward</h4>
-                            <p>There's still a ton left to learn -- in the meantime, I'm just trying to make things that help people.  I tend to switch projects fairly frequently, but the ones I'm working on right now are:</p>
+                            <p>There's still a ton left to learn;  in the meantime, I'm just trying to make things that help people.  I tend to switch projects fairly frequently, but the ones I'm working on right now are:</p>
                             <ul class="custom-list bottom-space">
                                 <li><a href="https://github.com/mfreema1/anonymouse">Anonymouse</a> - an anonymous question service for classrooms</li>
                                 <li><a href="https://github.com/mfreema1/food-crawler">MyCookbook</a> - a utility to help people make their own cookbooks from their favorite recipes</li>
                                 <li><a href="https://github.com/mfreema1/pi-research">Raspberry Flow</a> - a research project I'm working on at my university to help see why people go where they do</li>
                             </ul>
                             <CaptionedImage src="/static/raspberry.jpg" caption="Now if only we could make Raspberry Flow taste like an actual raspberry flow" artistUrl="https://unsplash.com/@natalie_rhea" artistName="Natalie Rhea Riggs"/>
-                            <p>If you want to check out some of my stuff over at my <a href="github.com/mfreema1">GitHub</a> profile I'd be flattered.  I really enjoy what I do, and I'm always happy to chat about it :)</p>
+                            <p>If you want to check out some of my stuff over at my <a href="https://github.com/mfreema1">GitHub</a> profile I'd be flattered.  I really enjoy what I do, and I'm always happy to chat about it :)</p>
                         </div>
                     </Col>
                 </Row>
