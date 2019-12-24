@@ -20,7 +20,7 @@
   "homepage": "https://github.com/mfreema1/personal-site-v2#readme",
   "dependencies": {
     "bluebird": "^3.5.3",
-    "bootstrap": "^4.2.1",
+    "bootstrap": "^4.3.1",
     "jquery": "^3.3.1",
     "moment": "^2.22.2",
     "popper.js": "^1.14.5",
