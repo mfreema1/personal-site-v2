@@ -23,27 +23,38 @@
 
     ◊section[#:title "The Abstraction Principle"]{
         ◊list-defs{
-            ◊def[#:term "Structure"]{The structure of a procedure is its
-            body, or the way it is represented.}
-            ◊def[#:term "Function"]{The function of a procedure is its
-            purpose, or what it does.}
-            ◊def[#:term "The Abstraction Principle"]{Structure and function
-            should be independent.  One should not need to know the structure
-            of a procedure in order to benefit from its function.  Function
-            is typically exposed via an ◊first-use{interface} of
-            ◊first-use{constructors} and ◊first-use{selectors}}.
+            ◊def[#:term "Structure"]{
+                The structure of a procedure is its body, or the way it is
+                represented.
+            }
 
-            ◊sidebar{This might seem a little bit like object-oriented
-            programming, because ◊em{it is}.}
+            ◊def[#:term "Function"]{
+                The function of a procedure is its purpose, or what it does.
+            }
+
+            ◊def[#:term "The Abstraction Principle"]{
+                Structure and function should be independent.  One should not
+                need to know the structure of a procedure in order to benefit
+                from its function.  Function is typically exposed via an 
+                ◊first-use{interface} of ◊first-use{constructors} and 
+                ◊first-use{selectors}.
+            }
+
+            ◊sidebar{
+                This might seem a little bit like object-oriented programming, 
+                because ◊em{it is}.
+            }
         }
 
-        ◊def[#:term "Constructor"]{A procedure that creates a compound value
-        from its inputs.}
+        ◊def[#:term "Constructor"]{
+            A procedure that creates a compound value from its inputs.
+        }
 
-        ◊def[#:term "Selector"]{A procedure that returns a specified component
-        of a compound value.}
+        ◊def[#:term "Selector"]{
+            A procedure that returns a specified component of a compound value.
+        }
 
-        ◊example[#:tags (join "lists" "pairs" "cdr")]{
+        ◊example{
             A violation of the abstraction principle in Scheme is the way that
             lists and pairs work with the ◊code{cdr} function.
 
@@ -54,10 +65,14 @@
                 ◊in{(cdr '(a . b))}
                 ◊out{'b}
             }
-            ◊explanation{This is because internally, lists are represented as
-            pairs of pairs.  For example, ◊code{'(a b c)} is 
-            ◊code{'(a . (b . (c . ())))} to the computer.  Thus, when you ask
-            for the second element of the list, you get the tail of the list.}
+
+            ◊explanation{
+                This is because internally, lists are represented as pairs of 
+                pairs.  For example, ◊code{'(a b c)} is  
+                ◊code{'(a . (b . (c . ())))} to the computer.  Thus, when you
+                ask for the second element of the list, you get the tail of 
+                the list.
+            }
         }
     }
 
@@ -94,17 +109,19 @@
         ◊first-use{structural equivalence}.
 
         ◊list-defs{
-            ◊def[#:term "Physical Equivalence"]{Two objects are physically
-            equivalent if they occupy the same address in memory.  For
-            composite values, they must have been created in the same call
-            to a constructor.}
+            ◊def[#:term "Physical Equivalence"]{
+                Two objects are physically equivalent if they occupy the same 
+                address in memory.  For composite values, they must have been 
+                created in the same call to a constructor.
+            }
 
-            ◊def[#:term "Structural Equivalence"]{Two objects are structurally
-            equivalent if they "look the same."}
+            ◊def[#:term "Structural Equivalence"]{
+                Two objects are structurally equivalent if they "look the same."
+            }
         }
         
         ◊section[#:title "Recognizers"]{
-            ◊def[#:term "Recognition Precidate" #:alt-term "Recognizer"] {
+            ◊def[#:term "Recognition Precidate" #:alt-term "Recognizer"]{
                 A predicate which determines if a value belongs to a
                 particular domain.  They usually have the form ◊em{domain?},
                 such as ◊code{symbol?} or ◊code{number?}.
