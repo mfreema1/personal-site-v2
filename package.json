@@ -1,50 +1,31 @@
 {
-  "name": "personal-site-v2",
-  "version": "1.0.0",
-  "description": "v1 wasn't that good anyways",
-  "main": "index.js",
+  "name": "site",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
   "scripts": {
-    "dev": "NODE_ENV=development webpack-dev-server",
-    "convert": "node ./src/misc/convert.js",
-    "build": "webpack"
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/mfreema1/personal-site-v2.git"
-  },
-  "author": "Mark Freeman",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/mfreema1/personal-site-v2/issues"
-  },
-  "homepage": "https://github.com/mfreema1/personal-site-v2#readme",
   "dependencies": {
-    "bluebird": "^3.5.3",
-    "bootstrap": "^4.2.1",
-    "jquery": "^3.3.1",
-    "moment": "^2.22.2",
-    "popper.js": "^1.14.5",
-    "react": "^16.6.1",
-    "react-addons-css-transition-group": "^15.6.2",
-    "react-dom": "^16.6.1",
-    "react-router-dom": "^4.3.1",
-    "reactstrap": "^7.1.0"
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@babel/cli": "^7.2.3",
-    "@babel/core": "^7.1.5",
-    "@babel/preset-env": "^7.1.5",
-    "@babel/preset-react": "^7.0.0",
-    "babel-loader": "^8.0.4",
-    "copy-webpack-plugin": "^4.6.0",
-    "css-loader": "^1.0.1",
-    "file-loader": "^3.0.1",
-    "html-webpack-plugin": "^3.2.0",
-    "marked": "^0.5.2",
-    "mini-css-extract-plugin": "^0.4.4",
-    "style-loader": "^0.23.1",
-    "webpack": "^4.29.0",
-    "webpack-cli": "^3.2.1",
-    "webpack-dev-server": "^3.1.10"
+    "@types/react": "^18.2.37",
+    "@types/react-dom": "^18.2.15",
+    "@typescript-eslint/eslint-plugin": "^6.10.0",
+    "@typescript-eslint/parser": "^6.10.0",
+    "@vitejs/plugin-react": "^4.2.0",
+    "autoprefixer": "^10.4.16",
+    "eslint": "^8.53.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.4",
+    "postcss": "^8.4.31",
+    "tailwindcss": "^3.3.5",
+    "typescript": "^5.2.2",
+    "vite": "^5.0.0"
   }
 }

@@ -1,9 +1,0 @@
-#lang pollen
-
-◊; TODO: procedurally generate this.
-◊book.html{
-    src/001.html
-    src/002.html
-    src/003.html
-    src/004.html
-}
