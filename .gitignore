@@ -1,3 +1,7 @@
 site/node_modules
 site/dist
 site/misc/README.js
+tool/bin
+tool/include
+tool/lib
+tool/lib64
