@@ -1,16 +1,23 @@
 function Intro() {
-    return (
-        <>
-            <div className="flex h-screen">
-                <div className="m-auto">
-                    <h1 className="font-mono text-center align-middle">My name is Mark.</h1>
-                    <h1 className="font-mono text-center align-middle">I am a software engineer.</h1>
+  return (
+    <>
+      <div className="flex h-full">
+        <div className="m-auto">
+          <h1 className="text-center align-middle font-mono">
+            My name is Mark.
+          </h1>
+          <h1 className="text-center align-middle font-mono">
+            I am a software engineer.
+          </h1>
 
-                    <h2 className="font-mono text-center align-middle">Welcome to my site! This is under construction at the moment, so check back soon.</h2>
-                </div>
-            </div>
-        </>
-    )
+          <h2 className="text-center align-middle font-mono">
+            Welcome to my site! This is under construction at the moment, so
+            check back soon.
+          </h2>
+        </div>
+      </div>
+    </>
+  );
 }
 
-export default Intro
+export default Intro;

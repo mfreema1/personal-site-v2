@@ -1,12 +1,15 @@
-import Intro from './Intro';
+import NavBar from "./NavBar";
+import Intro from "./Intro";
 
 function App() {
-
   return (
     <>
-      <Intro />
+      <div className="h-screen">
+        <NavBar />
+        <Intro />
+      </div>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
