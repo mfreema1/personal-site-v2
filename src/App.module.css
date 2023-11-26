@@ -1,4 +1,18 @@
-.content {
+.page {
   height: 100vh;
   width: 100vw;
+}
+
+.content {
+  height: 100%;
+  width: 60%;
+}
+
+.gutter {
+  height: 100%;
+  width: 20%;
+  background-color: light-dark(
+    var(--mantine-color-gray-0),
+    var(--mantine-color-dark-4)
+  );
 }

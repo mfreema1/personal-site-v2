@@ -1,5 +1,12 @@
 import { useState } from "react";
-import { Center, Tooltip, UnstyledButton, Stack, rem } from "@mantine/core";
+import {
+  Center,
+  Tooltip,
+  UnstyledButton,
+  Stack,
+  Box,
+  rem,
+} from "@mantine/core";
 import {
   IconHome,
   IconMail,
