@@ -1,12 +1,6 @@
 import { useState } from "react";
-import {
-  Center,
-  Tooltip,
-  UnstyledButton,
-  Stack,
-  Box,
-  rem,
-} from "@mantine/core";
+import { useNavigate } from "react-router-dom";
+import { Center, Tooltip, UnstyledButton, Stack, rem } from "@mantine/core";
 import {
   IconHome,
   IconMail,
@@ -25,21 +19,13 @@ interface NavbarLinkProps {
   onClick?(): void;
 }
 
-function NavbarLink({
-  icon: Icon,
-  path,
-  label,
-  active,
-  onClick,
-}: NavbarLinkProps) {
+function NavbarLink({ icon: Icon, label, active, onClick }: NavbarLinkProps) {
   return (
     <Tooltip label={label} position="right" transitionProps={{ duration: 0 }}>
       <UnstyledButton
         onClick={onClick}
         className={classes.link}
         data-active={active || undefined}
-        component="a"
-        href={path}
       >
         <Icon style={{ width: rem(20), height: rem(20) }} stroke={1.5} />
       </UnstyledButton>
@@ -72,19 +58,21 @@ const data = new Map(
 
 export function Navbar() {
   const [active, setActive] = useState<string | undefined>(undefined);
+  const navigate = useNavigate();
 
   const links = (...ids: string[]) =>
     ids.map((id) => {
-      const link = data.get(id);
-
-      if (link === undefined) throw new Error(`Link with ID ${id} undefined`);
+      const link = data.get(id)!;
 
       return (
         <NavbarLink
           {...link}
           key={link.label}
           active={id === active}
-          onClick={() => setActive(id)}
+          onClick={() => {
+            setActive(id);
+            navigate(link.path);
+          }}
         />
       );
     });

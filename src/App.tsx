@@ -1,11 +1,30 @@
 import { Affix, Flex, Box, Center } from "@mantine/core";
+import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
+
 import { Navbar } from "./Navbar";
 import { Intro } from "./Intro";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import classes from "./App.module.css";
 
+const router = createBrowserRouter([
+  {
+    Component: Layout,
+    children: [
+      { path: "/", Component: Intro },
+      { path: "/about", Component: () => <p>About</p> },
+      { path: "/breadth", Component: () => <p>Breadth</p> },
+      { path: "/depth", Component: () => <p>Depth</p> },
+      { path: "/other", Component: () => <p>Other</p> },
+      { path: "/contact", Component: () => <p>Contact</p> },
+    ],
+  },
+]);
+
 function App() {
+  return <RouterProvider router={router} />;
+}
+
+function Layout() {
   return (
     <>
       <Affix position={{ left: 0, top: 0 }}>
@@ -19,16 +38,7 @@ function App() {
       >
         <Box className={classes.gutter} />
         <Center className={classes.content}>
-          <BrowserRouter>
-            <Routes>
-              <Route path="/" element={<Intro />} />
-              <Route path="about" element={<p>About</p>} />
-              <Route path="breadth" element={<p>Breadth</p>} />
-              <Route path="depth" element={<p>Depth</p>} />
-              <Route path="other" element={<p>Other</p>} />
-              <Route path="contact" element={<p>Contact</p>} />
-            </Routes>
-          </BrowserRouter>
+          <Outlet />
         </Center>
         <Box className={classes.gutter} />
       </Flex>
