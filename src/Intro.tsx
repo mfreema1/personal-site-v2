@@ -1,23 +1,20 @@
-function Intro() {
+import { Stack, Text } from "@mantine/core";
+
+export function Intro() {
   return (
     <>
-      <div className="flex h-full">
-        <div className="m-auto">
-          <h1 className="text-center align-middle font-mono">
-            My name is Mark.
-          </h1>
-          <h1 className="text-center align-middle font-mono">
-            I am a software engineer.
-          </h1>
-
-          <h2 className="text-center align-middle font-mono">
-            Welcome to my site! This is under construction at the moment, so
-            check back soon.
-          </h2>
-        </div>
-      </div>
+      <Stack>
+        <Text size="xl" ta="center">
+          My name is Mark
+        </Text>
+        <Text size="md" ta="center">
+          I am a Software Engineer
+        </Text>
+        <Text size="sm" ta="center">
+          Welcome! This site is under construction right now, so check back
+          soon.
+        </Text>
+      </Stack>
     </>
   );
 }
-
-export default Intro;
