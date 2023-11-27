@@ -1,3 +1,14 @@
+.background {
+  height: 100vh;
+  width: 100vw;
+  z-index: -1;
+
+  background-color: light-dark(
+    var(--mantine-color-gray-0),
+    var(--mantine-color-dark-4)
+  );
+}
+
 .page {
   height: 100vh;
   width: 100vw;
@@ -5,14 +16,7 @@
 
 .content {
   height: 100%;
-  width: 60%;
-}
+  width: max(60%, $mantine-breakpoint-md);
 
-.gutter {
-  height: 100%;
-  width: 20%;
-  background-color: light-dark(
-    var(--mantine-color-gray-0),
-    var(--mantine-color-dark-4)
-  );
+  background-color: white;
 }
