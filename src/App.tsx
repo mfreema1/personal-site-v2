@@ -24,15 +24,14 @@ const router = createBrowserRouter([
   },
 ]);
 
+// TODO: Put the page content on Paper: https://mantine.dev/core/paper/
 function Layout() {
   return (
     <>
       <Affix position={{ left: 0, top: 0 }} zIndex={-1}>
         <Box className={classes.background} />
       </Affix>
-      <Affix position={{ left: 0, top: 0 }}>
-        <Navbar />
-      </Affix>
+      <Navbar />
       <Flex>
         <Center className={classes.page}>
           <Center className={classes.content}>

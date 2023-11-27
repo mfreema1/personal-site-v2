@@ -1,6 +1,15 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Center, Tooltip, UnstyledButton, Stack, rem } from "@mantine/core";
+import {
+  Center,
+  Tooltip,
+  UnstyledButton,
+  Stack,
+  Transition,
+  Affix,
+  Burger,
+  rem,
+} from "@mantine/core";
 import {
   IconHome,
   IconMail,
@@ -10,6 +19,7 @@ import {
   IconZoomCode,
 } from "@tabler/icons-react";
 import classes from "./Navbar.module.css";
+import { useDisclosure } from "@mantine/hooks";
 
 interface NavbarLinkProps {
   icon: typeof IconHome;
@@ -59,42 +69,55 @@ const data = new Map(
 export function Navbar() {
   const [active, setActive] = useState<string | undefined>(undefined);
   const navigate = useNavigate();
+  const [opened, { toggle }] = useDisclosure(true);
 
   const links = (...ids: string[]) =>
     ids.map((id) => {
       const link = data.get(id)!;
 
       return (
-        <NavbarLink
-          {...link}
-          key={link.label}
-          active={id === active}
-          onClick={() => {
-            setActive(id);
-            navigate(link.path);
-          }}
-        />
+        <Center>
+          <NavbarLink
+            {...link}
+            key={link.label}
+            active={id === active}
+            onClick={() => {
+              setActive(id);
+              navigate(link.path);
+            }}
+          />
+        </Center>
       );
     });
 
   return (
-    <nav className={classes.navbar}>
-      <Center>{links("home")}</Center>
+    <>
+      <Affix position={{ left: 0, top: 0 }}>
+        <Stack className={classes.navbar}>
+          <Center>
+            <Burger opened={opened} onClick={toggle} />
+          </Center>
 
-      <div className={classes.navbarMain}>
-        <Stack justify="center" gap={0}>
-          {links(
-            "about-me",
-            "breadth-seminars",
-            "depth-seminars",
-            "everything-else",
-          )}
+          <Transition mounted={opened} transition="fade">
+            {(styles) => (
+              <Stack style={styles} h={"100%"} justify="space-between">
+                {links("home")}
+
+                <Stack gap={0}>
+                  {links(
+                    "about-me",
+                    "breadth-seminars",
+                    "depth-seminars",
+                    "everything-else",
+                  )}
+                </Stack>
+
+                {links("email-me")}
+              </Stack>
+            )}
+          </Transition>
         </Stack>
-      </div>
-
-      <Stack justify="center" gap={0}>
-        {links("email-me")}
-      </Stack>
-    </nav>
+      </Affix>
+    </>
   );
 }
