@@ -2,8 +2,8 @@ import { Affix, Flex, Box, Center } from "@mantine/core";
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 
 import { Navbar } from "./Navbar";
-import { Intro } from "./Intro";
 
+import { Home } from "./pages/home/Home";
 import { Breadth } from "./pages/breadth/Breadth";
 
 import classes from "./App.module.css";
@@ -16,9 +16,9 @@ const router = createBrowserRouter([
   {
     Component: Layout,
     children: [
-      { path: "/", Component: Intro },
+      { path: "/", Component: Home },
       { path: "/about", Component: () => <p>About</p> },
-      { path: "/breadth", Component: () => <Breadth /> },
+      { path: "/breadth", Component: Breadth },
       { path: "/depth", Component: () => <p>Depth</p> },
       { path: "/other", Component: () => <p>Other</p> },
       { path: "/contact", Component: () => <p>Contact</p> },

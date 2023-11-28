@@ -1,6 +1,6 @@
 import { Stack, Text } from "@mantine/core";
 
-export function Intro() {
+export function Home() {
   return (
     <>
       <Stack>
