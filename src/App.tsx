@@ -4,6 +4,8 @@ import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import { Navbar } from "./Navbar";
 import { Intro } from "./Intro";
 
+import { Breadth } from "./pages/breadth/Breadth";
+
 import classes from "./App.module.css";
 
 function App() {
@@ -16,7 +18,7 @@ const router = createBrowserRouter([
     children: [
       { path: "/", Component: Intro },
       { path: "/about", Component: () => <p>About</p> },
-      { path: "/breadth", Component: () => <p>Breadth</p> },
+      { path: "/breadth", Component: () => <Breadth /> },
       { path: "/depth", Component: () => <p>Depth</p> },
       { path: "/other", Component: () => <p>Other</p> },
       { path: "/contact", Component: () => <p>Contact</p> },
