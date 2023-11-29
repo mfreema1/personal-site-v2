@@ -1,13 +1,10 @@
-import { Title, Stack, Grid, Text } from "@mantine/core";
+import { Title, Stack, Text } from "@mantine/core";
 import { PageTable } from "../../components/PageTable";
 import { Quote } from "../../components/Quote";
 
 export function Breadth() {
   return (
     <>
-      <Grid w="100%">
-        <Grid.Col span={1} />
-        <Grid.Col span={10}>
           <Stack gap="xl">
             <Title order={1}>
               <Text
@@ -51,9 +48,6 @@ export function Breadth() {
               ]}
             />
           </Stack>
-        </Grid.Col>
-        <Grid.Col span={1} />
-      </Grid>
     </>
   );
 }

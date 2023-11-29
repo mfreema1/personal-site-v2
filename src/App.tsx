@@ -1,4 +1,4 @@
-import { Affix, Stack, Container } from "@mantine/core";
+import { Affix, Grid, Paper } from "@mantine/core";
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 
 import { Navbar } from "./Navbar";
@@ -40,11 +40,21 @@ function Layout() {
         className={classes.background}
       />
       <Navbar />
-      <Container className={classes.content}>
-        <Stack>
-          <Outlet />
-        </Stack>
-      </Container>
+      <Grid mih={"100vh"} gutter={0}>
+        <Grid.Col span={"auto"} />
+        <Grid.Col mih={"100vh"} span={8}>
+          <Paper h={"100%"} shadow={"lg"} radius={"lg"}>
+            <Grid>
+              <Grid.Col span={"auto"} />
+              <Grid.Col span={10}>
+                <Outlet />
+              </Grid.Col>
+              <Grid.Col span={"auto"} />
+            </Grid>
+          </Paper>
+        </Grid.Col>
+        <Grid.Col span={"auto"} />
+      </Grid>
     </>
   );
 }

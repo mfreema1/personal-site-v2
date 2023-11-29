@@ -46,7 +46,7 @@ public class FooFactory {
   return (
     <>
       <Grid w="100%">
-        <Grid.Col span={1} />
+        <Grid.Col span={"auto"} />
         <Grid.Col span={10}>
           <Stack gap="xl">
             <Title order={1}>
@@ -107,7 +107,7 @@ public class FooFactory {
             />
           </Stack>
         </Grid.Col>
-        <Grid.Col span={1} />
+        <Grid.Col span={"auto"} />
       </Grid>
     </>
   );

@@ -7,10 +7,3 @@
     var(--mantine-color-dark-4)
   );
 }
-
-.content {
-  width: max(60%, $mantine-breakpoint-md);
-  min-height: 100vh;
-
-  background-color: white;
-}
