@@ -40,13 +40,13 @@ function Layout() {
         className={classes.background}
       />
       <Navbar />
-      <Grid py={"2em"} mih={"100vh"} gutter={0}>
+      <Grid py={"2rem"} mih={"100vh"} gutter={0}>
         <Grid.Col span={"auto"} />
         <Grid.Col mih={"calc(100vh - (2 * 2rem))"} span={8}>
           <Paper h={"100%"} shadow={"lg"} radius={"lg"}>
             <Grid>
               <Grid.Col span={"auto"} />
-              <Grid.Col my={"2em"} span={10}>
+              <Grid.Col my={"4rem"} span={10}>
                 <Outlet />
               </Grid.Col>
               <Grid.Col span={"auto"} />

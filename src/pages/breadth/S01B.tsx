@@ -3,6 +3,7 @@ import { Quote } from "../../components/Quote";
 import { Note } from "../../components/Note";
 import { ProConTable } from "../../components/ProConTable";
 import { JavaSplit } from "../../components/JavaSplit";
+import { Term } from "../../components/Term";
 
 export function S01B() {
   return (
@@ -66,12 +67,12 @@ export function S01B() {
         </Title>
 
         <Text>
-          The essence of Factory is to take the logic of creating an object and
-          give it to another object. This can appear in many ways — a factory
-          method or class, concrete or abstract return types, etc. As you might
-          suspect, a concrete factory method is simpler, but an abstract factory
-          class is more flexible. Let's take a look at how we could apply a
-          concrete factory class.
+          The essence of <Term id="factory" text="factory" /> is to take the
+          logic of creating an object and give it to another object. This can
+          appear in many ways — a factory method or class, concrete or abstract
+          return types, etc. As you might suspect, a concrete factory method is
+          simpler, but an abstract factory class is more flexible. Let's take a
+          look at how we could apply a concrete factory class.
         </Text>
 
         <JavaSplit
@@ -104,11 +105,10 @@ export function S01B() {
             <Text>
               And here, <Code>FooFactory</Code> has become a concrete factory
               for <Code>Foo</Code>. Note that the <Code>frob</Code> logic has
-              been extracted into the factory and that the <Code>Foo</Code>
-              class is still concrete. Anyone who can construct a
-              <Code>Frob</Code>
-              instance work with <Code>Foo</Code>, and we have much more
-              flexibility in how we construct <Code>Foo</Code> now.
+              been extracted into the factory and that the <Code>Foo</Code>{" "}
+              class is still concrete. Anyone who can construct a{" "}
+              <Code>Frob</Code> instance work with <Code>Foo</Code>, and we have
+              much more flexibility in how we construct <Code>Foo</Code> now.
             </Text>
           }
           code={`
@@ -129,6 +129,18 @@ export function S01B() {
                 }
               `}
         />
+
+        <Title order={2} c="blue">
+          Builder
+        </Title>
+
+        <Text>
+          Constructors are nice, but often not flexible enough for building
+          complex structures. If we ask a business for an ice cream cone, they
+          probably have an idea for what a default ice cream cone looks like —
+          they may ask for a flavor, but will probably leave it plain unless you
+          ask for toppings.
+        </Text>
       </Stack>
     </>
   );
