@@ -42,7 +42,7 @@ function Layout() {
       <Navbar />
       <Grid py={"2rem"} mih={"100vh"} gutter={0}>
         <Grid.Col span={"auto"} />
-        <Grid.Col mih={"calc(100vh - (2 * 2rem))"} span={8}>
+        <Grid.Col mih={"calc(100vh - (2 * 2rem))"} span={7}>
           <Paper h={"100%"} shadow={"lg"} radius={"lg"}>
             <Grid>
               <Grid.Col span={"auto"} />

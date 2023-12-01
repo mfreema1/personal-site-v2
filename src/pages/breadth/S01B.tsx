@@ -4,21 +4,26 @@ import { Note } from "../../components/Note";
 import { ProConTable } from "../../components/ProConTable";
 import { JavaSplit } from "../../components/JavaSplit";
 import { Term } from "../../components/Term";
+import { Section } from "../../components/Section";
 
 export function S01B() {
   return (
     <>
       <Stack gap="xl">
-        <Title order={1}>
-          <Text span inherit c="blue">
-            S01B: Object-Oriented Design Patterns
+        <Stack gap="xs">
+          <Title order={1}>
+            <Text span inherit c="blue">
+              Object-Oriented Design Patterns
+            </Text>
+          </Title>
+          <Quote
+            text="To understand is to perceive patterns."
+            author="Isaiah Berlin"
+          />
+          <Text c="dimmed" fs="italic">
+            S01B, Mark Freeman
           </Text>
-        </Title>
-
-        <Quote
-          text="To understand is to perceive patterns."
-          author="Isaiah Berlin"
-        />
+        </Stack>
 
         <Text>
           When it comes to writing software, oftentimes, the quality and
@@ -60,58 +65,62 @@ export function S01B() {
               still the same pattern.
             </Text>
           }
+          color={"yellow"}
         />
 
-        <Title order={2} c="blue">
-          Factory
-        </Title>
-
-        <Text>
-          The essence of <Term id="factory" text="factory" /> is to take the
-          logic of creating an object and give it to another object. This can
-          appear in many ways — a factory method or class, concrete or abstract
-          return types, etc. As you might suspect, a concrete factory method is
-          simpler, but an abstract factory class is more flexible. Let's take a
-          look at how we could apply a concrete factory class.
-        </Text>
-
-        <JavaSplit
-          left={
-            <Text>
-              Here, we see a class that's doing something a bit odd — work in
-              the constructor. Generally, we want a simple assignment in the
-              constructor — anything more complicated than that should be
-              scrutinized.
-            </Text>
+        <Section
+          title={
+            <Title order={2} c="blue">
+              Factory
+            </Title>
           }
-          code={`
-                public class Foo {
-
-                    private final Frob frob;
-            
-                    // We are doing work in our constructor to transform Bar into Frob. 
-                    public Foo(Bar bar) {
-                       this.frob = frob(bar);
-                    }
-            
-                    private static Frob frob(Bar bar) {
-                       // Pretend this does something.
-                    }
-                }
-              `}
-        />
-        <JavaSplit
-          left={
+          components={[
             <Text>
-              And here, <Code>FooFactory</Code> has become a concrete factory
-              for <Code>Foo</Code>. Note that the <Code>frob</Code> logic has
-              been extracted into the factory and that the <Code>Foo</Code>{" "}
-              class is still concrete. Anyone who can construct a{" "}
-              <Code>Frob</Code> instance work with <Code>Foo</Code>, and we have
-              much more flexibility in how we construct <Code>Foo</Code> now.
-            </Text>
-          }
-          code={`
+              The essence of <Term id="factory" text="factory" /> is to take the
+              logic of creating an object and give it to another object. This
+              can appear in many ways — a factory method or class, concrete or
+              abstract return types, etc. As you might suspect, a concrete
+              factory method is simpler, but an abstract factory class is more
+              flexible. Let's take a look at how we could apply a concrete
+              factory class.
+            </Text>,
+            <JavaSplit
+              left={
+                <Text>
+                  Here, we see a class that's doing something a bit odd — work
+                  in the constructor. Generally, we want a simple assignment in
+                  the constructor — anything more complicated than that should
+                  be scrutinized.
+                </Text>
+              }
+              code={`
+              public class Foo {
+
+                  private final Frob frob;
+          
+                  public Foo(Bar bar) {
+                     this.frob = frob(bar);
+                  }
+          
+                  private static Frob frob(Bar bar) {
+                     // Pretend this does something.
+                  }
+              }
+            `}
+            />,
+            <JavaSplit
+              left={
+                <Text>
+                  And here, <Code>FooFactory</Code> has become a concrete
+                  factory for <Code>Foo</Code>. Note that the <Code>frob</Code>{" "}
+                  logic has been extracted into the factory and that the{" "}
+                  <Code>Foo</Code> class is still concrete. Anyone who can
+                  construct a <Code>Frob</Code> instance work with{" "}
+                  <Code>Foo</Code>, and we have much more flexibility in how we
+                  construct <Code>Foo</Code> now.
+                </Text>
+              }
+              code={`
                 public class FooFactory {
 
                     public static Foo createFoo(Bar bar) {
@@ -128,19 +137,26 @@ export function S01B() {
                     }
                 }
               `}
+            />,
+          ]}
         />
 
-        <Title order={2} c="blue">
-          Builder
-        </Title>
-
-        <Text>
-          Constructors are nice, but often not flexible enough for building
-          complex structures. If we ask a business for an ice cream cone, they
-          probably have an idea for what a default ice cream cone looks like —
-          they may ask for a flavor, but will probably leave it plain unless you
-          ask for toppings.
-        </Text>
+        <Section
+          title={
+            <Title order={2} c="blue">
+              Builder
+            </Title>
+          }
+          components={[
+            <Text>
+              Constructors are nice, but often not flexible enough for building
+              complex structures. If we ask a business for an ice cream cone,
+              they probably have an idea for what a default ice cream cone looks
+              like — they may ask for a flavor, but will probably leave it plain
+              unless you ask for toppings.
+            </Text>,
+          ]}
+        />
       </Stack>
     </>
   );

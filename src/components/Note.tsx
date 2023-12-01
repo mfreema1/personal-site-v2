@@ -3,11 +3,17 @@ import { IconPencil } from "@tabler/icons-react";
 
 export interface NoteProps {
   inner: React.ReactElement;
+  color: string;
 }
 
-export function Note({ inner }: NoteProps) {
+export function Note({ inner, color }: NoteProps) {
   return (
-    <Alert variant="light" color="blue" title="Take Note" icon={<IconPencil />}>
+    <Alert
+      variant="light"
+      color={color}
+      title="Take Note"
+      icon={<IconPencil />}
+    >
       {inner}
     </Alert>
   );

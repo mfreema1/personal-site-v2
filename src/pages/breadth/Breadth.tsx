@@ -1,11 +1,16 @@
-import { Title, Stack, Text } from "@mantine/core";
+import { Title, Stack, Text, Breadcrumbs } from "@mantine/core";
 import { PageTable } from "../../components/PageTable";
 import { Quote } from "../../components/Quote";
+import { Link } from "react-router-dom";
 
 export function Breadth() {
   return (
     <>
       <Stack gap="xl">
+        <Breadcrumbs>
+          <Link to="/">Home</Link>
+          <Link to="/breadth">Breadth</Link>
+        </Breadcrumbs>
         <Title order={1}>
           <Text
             span
