@@ -1,6 +1,7 @@
-import { Text, Table, Group } from "@mantine/core";
+import { Table, Group } from "@mantine/core";
 import { Link } from "react-router-dom";
 import { Topic } from "./Topic";
+import { Txt } from "./Text";
 
 export interface PageTableProps {
   rows: { id: string; title: string; topicIds: string[] }[];
@@ -12,9 +13,21 @@ export function PageTable({ rows }: PageTableProps) {
       <Table striped>
         <Table.Thead>
           <Table.Tr>
-            <Table.Th>ID</Table.Th>
-            <Table.Th>Title</Table.Th>
-            <Table.Th>Topics</Table.Th>
+            <Table.Th>
+              <Txt s="san" b>
+                ID
+              </Txt>
+            </Table.Th>
+            <Table.Th>
+              <Txt s="san" b>
+                Title
+              </Txt>
+            </Table.Th>
+            <Table.Th>
+              <Txt s="san" b>
+                Topics
+              </Txt>
+            </Table.Th>
           </Table.Tr>
         </Table.Thead>
         <Table.Tbody>
@@ -22,11 +35,13 @@ export function PageTable({ rows }: PageTableProps) {
             <Table.Tr key={row.id}>
               <Table.Td>
                 <Link to={row.id}>
-                  <Text fw={900}>{row.id}</Text>
+                  <Txt s="san" b>
+                    {row.id}
+                  </Txt>
                 </Link>
               </Table.Td>
               <Table.Td>
-                <Text>{row.title}</Text>
+                <Txt s="san">{row.title}</Txt>
               </Table.Td>
               <Table.Td>
                 <Group gap="xs">

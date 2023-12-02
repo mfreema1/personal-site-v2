@@ -1,22 +1,14 @@
+import "@mantine/core/styles.css";
+import "@mantine/code-highlight/styles.css";
+
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App.tsx";
-import "./main.css";
-
-// Mantine stuff.
-import "@mantine/core/styles.css";
 
 import { MantineProvider, rem, createTheme } from "@mantine/core";
 const theme = createTheme({
-  fontFamily: "Roboto, sans-serif",
+  fontFamily: "Merriweather, serif",
   fontFamilyMonospace: "Roboto Mono, monospace",
-  // fontSizes: {
-  //   xs: rem(14),
-  //   sm: rem(16),
-  //   md: rem(18),
-  //   lg: rem(20),
-  //   xl: rem(22)
-  // },
   headings: {
     fontFamily: "Roboto, sans-serif",
     fontWeight: "700",

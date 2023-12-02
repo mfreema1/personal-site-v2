@@ -1,4 +1,5 @@
 import { Badge } from "@mantine/core";
+import { Txt } from "./Text";
 
 const data = new Map(
   Object.entries({
@@ -16,7 +17,9 @@ export function Topic({ id }: TopicProps) {
 
   return (
     <>
-      <Badge color={topic.color}>{topic.title}</Badge>
+      <Badge color={topic.color}>
+        <Txt s="san">{topic.title}</Txt>
+      </Badge>
     </>
   );
 }

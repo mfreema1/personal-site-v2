@@ -2,13 +2,17 @@ import { useState } from "react";
 import prettier from "prettier";
 import parserJava from "prettier-plugin-java";
 import { Skeleton, Transition } from "@mantine/core";
-import { CodeHighlight } from "@mantine/code-highlight";
+import { CodeHighlightTabs } from "@mantine/code-highlight";
+import { DiJava } from "react-icons/di";
 
-export interface JavaProps {
+type Quality = "good" | "bad";
+
+export interface JavaSingleProps {
   code: string;
+  quality?: Quality;
 }
 
-export function Java({ code }: JavaProps) {
+export function JavaSingle({ code, quality }: JavaSingleProps) {
   const [loaded, setLoaded] = useState(false);
   const [fadedOut, setFadedOut] = useState(false);
   const [formattedCode, setFormattedCode] = useState<string>("");
@@ -20,6 +24,13 @@ export function Java({ code }: JavaProps) {
       setLoaded(true);
     });
 
+  const codeHighlightProps = {
+    fileName: "Demo.java",
+    code: code,
+    language: "java",
+    icon: <DiJava size={24} />,
+  };
+
   return (
     <>
       <Transition
@@ -29,20 +40,30 @@ export function Java({ code }: JavaProps) {
       >
         {(style) => (
           <Skeleton style={style}>
-            <CodeHighlight code={code} language="java" withCopyButton={false} />
+            <CodeHighlightTabs code={codeHighlightProps} />
           </Skeleton>
         )}
       </Transition>
       <Transition mounted={fadedOut} transition={"pop"}>
         {(style) => (
-          <CodeHighlight
+          <CodeHighlightTabs
+            bg={getBackground(quality)}
             style={style}
-            code={formattedCode}
-            language="java"
-            withCopyButton={false}
+            code={{ ...codeHighlightProps, code: formattedCode }}
           />
         )}
       </Transition>
     </>
   );
+}
+
+function getBackground(quality?: Quality) {
+  switch (quality) {
+    case "good":
+      return "var(--mantine-color-green-0)";
+    case "bad":
+      return "var(--mantine-color-red-0)";
+    default:
+      return "var(--mantine-color-gray-0)";
+  }
 }

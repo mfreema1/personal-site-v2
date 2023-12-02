@@ -1,5 +1,6 @@
-import { Stack, Text, Breadcrumbs } from "@mantine/core";
+import { Stack, Breadcrumbs } from "@mantine/core";
 import { Link } from "react-router-dom";
+import { Txt } from "./Text";
 
 export interface PageProps {
   path: string;
@@ -11,13 +12,15 @@ export function Page({ path, children }: PageProps) {
 
   const links = [
     <Link to="/">
-      <Text>Home</Text>
+      <Txt s="san">Home</Txt>
     </Link>,
   ];
   for (let i = 0; i < pathComponents.length; i++) {
     links.push(
       <Link to={`/${pathComponents.slice(0, i + 1).join("/")}`}>
-        <Text tt="capitalize">{pathComponents[i]}</Text>
+        <Txt s="san" mantine={{ tt: "capitalize" }}>
+          {pathComponents[i]}
+        </Txt>
       </Link>,
     );
   }
