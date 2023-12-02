@@ -5,11 +5,12 @@ import { ProConTable } from "../../components/ProConTable";
 import { JavaSplit } from "../../components/JavaSplit";
 import { Term } from "../../components/Term";
 import { Section } from "../../components/Section";
+import { Page } from "../../components/Page";
 
 export function S01B() {
   return (
     <>
-      <Stack gap="xl">
+      <Page path="/breadth/S01B">
         <Stack gap="xs">
           <Title order={1}>
             <Text span inherit c="blue">
@@ -43,14 +44,49 @@ export function S01B() {
 
         <ProConTable
           pros={[
-            "Less Thinking: If you recognize a certain pattern, you get an immediate solution.",
-            "More Commonality: If you name a class FooFactory, teammates can tell what it does from the name.",
-            "Good Practice: Patterns generally provide a decoupled and well-structured solution to a given problem.",
+            <Text>
+              <Text span fw={700}>
+                Less Thinking:{" "}
+              </Text>
+              If you recognize a certain pattern, you get an immediate solution.
+            </Text>,
+            <Text>
+              <Text span fw={700}>
+                More Commonality:{" "}
+              </Text>
+              If you name a class <Code>FooFactory</Code>, teammates can tell
+              what it does from the name.
+            </Text>,
+            <Text>
+              <Text span fw={700}>
+                Good Practice:{" "}
+              </Text>
+              Patterns generally provide a decoupled and well-structured
+              solution to a given problem.
+            </Text>,
           ]}
           cons={[
-            "Required Knowledge: If a teammate writes a pattern you do not know, there is no shared knowledge benefit.",
-            "Over-Engineering: For small projects, heavy use of design patterns can be considered over-engineering.",
-            "Over-Abstraction: Design patterns commonly work via abstraction, which is only good when chosen tastefully.",
+            <Text>
+              <Text span fw={700}>
+                Required Knowledge:{" "}
+              </Text>
+              If a teammate writes a pattern you do not know, there is no shared
+              knowledge benefit.
+            </Text>,
+            <Text>
+              <Text span fw={700}>
+                Over-Engineering:{" "}
+              </Text>
+              For small projects, heavy use of design patterns can be considered
+              over-engineering.
+            </Text>,
+            <Text>
+              <Text span fw={700}>
+                Over-Abstraction:{" "}
+              </Text>
+              Design patterns commonly work via abstraction, which is only good
+              when chosen tastefully.
+            </Text>,
           ]}
         />
 
@@ -157,7 +193,7 @@ export function S01B() {
             </Text>,
           ]}
         />
-      </Stack>
+      </Page>
     </>
   );
 }

@@ -1,8 +1,8 @@
-import { Table } from "@mantine/core";
+import { Table, Text } from "@mantine/core";
 
 export interface ProConTableProps {
-  pros: string[];
-  cons: string[];
+  pros: React.ReactNode[];
+  cons: React.ReactNode[];
 }
 
 export function ProConTable({ pros, cons }: ProConTableProps) {
@@ -15,8 +15,12 @@ export function ProConTable({ pros, cons }: ProConTableProps) {
       <Table striped>
         <Table.Thead>
           <Table.Tr>
-            <Table.Th>Pros</Table.Th>
-            <Table.Th>Cons</Table.Th>
+            <Table.Th>
+              <Text fw={700}>Pros</Text>
+            </Table.Th>
+            <Table.Th>
+              <Text fw={700}>Cons</Text>
+            </Table.Th>
           </Table.Tr>
         </Table.Thead>
         <Table.Tbody>
