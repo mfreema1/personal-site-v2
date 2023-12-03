@@ -8,12 +8,7 @@ export function Breadth() {
     <>
       <Page path={"/breadth"}>
         <Title order={1}>
-          <Text
-            span
-            inherit
-            variant="gradient"
-            gradient={{ from: "blue", to: "grape", deg: 90 }}
-          >
+          <Text span inherit c="blue">
             Breadth
           </Text>
         </Title>
