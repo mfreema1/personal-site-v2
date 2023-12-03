@@ -18,7 +18,9 @@ export function Topic({ id }: TopicProps) {
   return (
     <>
       <Badge color={topic.color}>
-        <Txt s="san">{topic.title}</Txt>
+        <Txt s="san" b fz="xs">
+          {topic.title}
+        </Txt>
       </Badge>
     </>
   );

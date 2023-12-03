@@ -1,9 +1,13 @@
-import { HoverCard, MantineSize, Title } from "@mantine/core";
+import { Group, HoverCard, MantineSize, Title } from "@mantine/core";
 import { Txt } from "./Text";
 
 type TTerm = "factory";
 type TTermMapping = {
-  [T in TTerm]: { title: string; description: React.ReactNode };
+  [T in TTerm]: {
+    title: string;
+    description: React.ReactNode;
+    pronunciation: string;
+  };
 };
 
 const data: TTermMapping = {
@@ -19,6 +23,7 @@ const data: TTermMapping = {
         from its constructor.
       </Txt>
     ),
+    pronunciation: "/ˈfakt(ə)rē/",
   },
 };
 
@@ -41,9 +46,14 @@ export function Term({ id, text, fz }: TermProps) {
         </Txt>
       </HoverCard.Target>
       <HoverCard.Dropdown w={"24rem"}>
-        <Title order={3} c="blue">
-          {termData.title}
-        </Title>
+        <Group justify={"space-between"}>
+          <Title order={3} c={"blue"}>
+            {termData.title}
+          </Title>
+          <Txt s="san" d fz="sm">
+            {termData.pronunciation}
+          </Txt>
+        </Group>
         <Txt s={"san"}>{termData.description}</Txt>
       </HoverCard.Dropdown>
     </HoverCard>
