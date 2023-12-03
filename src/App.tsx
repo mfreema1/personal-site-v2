@@ -58,7 +58,11 @@ function Layout() {
         </Transition>
       </Affix>
       <Affix position={{ left: "2rem", top: "2rem" }} zIndex={0}>
-        <Transition mounted={buttonEnter} onExited={() => setHeaderEnter(true)}>
+        <Transition
+          mounted={buttonEnter}
+          keepMounted
+          onExited={() => setHeaderEnter(true)}
+        >
           {(style) => (
             <ActionIcon
               variant="light"

@@ -62,8 +62,12 @@ export function Header({ close, style }: HeaderProps) {
             <CloseButton ml={"1rem"} size={"lg"} onClick={close} />
           </Center>
 
-          <Tabs defaultValue={"Home"} onChange={(path) => navigate(path!)}>
-            <Tabs.List justify={"center"}>
+          <Tabs
+            defaultValue={"/"}
+            onChange={(path) => navigate(path!)}
+            mr={"4rem"}
+          >
+            <Tabs.List>
               {Object.values(data).map((datum) => (
                 <Tabs.Tab
                   value={datum.path}
