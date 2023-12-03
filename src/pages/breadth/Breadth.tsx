@@ -2,24 +2,20 @@ import { Title, Text } from "@mantine/core";
 import { PageTable } from "../../components/PageTable";
 import { Page } from "../../components/Page";
 import { Quote } from "../../components/Quote";
-import { Txt } from "../../components/Text";
 
 export function Breadth() {
   return (
     <>
       <Page path={"/breadth"}>
         <Title order={1}>
-          <Txt s="san" mantine={{ inherit: true }}>
-            Breadth
-          </Txt>
-          {/* <Text
+          <Text
             span
             inherit
             variant="gradient"
             gradient={{ from: "blue", to: "grape", deg: 90 }}
           >
             Breadth
-          </Text> */}
+          </Text>
         </Title>
         <Quote
           text="The height of the pinnacle is determined by the breadth of the
