@@ -5,14 +5,11 @@ import { Skeleton, Transition } from "@mantine/core";
 import { CodeHighlightTabs } from "@mantine/code-highlight";
 import { DiJava } from "react-icons/di";
 
-type Quality = "good" | "bad";
-
 export interface JavaSingleProps {
   code: string;
-  quality?: Quality;
 }
 
-export function JavaSingle({ code, quality }: JavaSingleProps) {
+export function JavaSingle({ code }: JavaSingleProps) {
   const [loaded, setLoaded] = useState(false);
   const [fadedOut, setFadedOut] = useState(false);
   const [formattedCode, setFormattedCode] = useState<string>("");
@@ -47,7 +44,6 @@ export function JavaSingle({ code, quality }: JavaSingleProps) {
       <Transition mounted={fadedOut} transition={"pop"}>
         {(style) => (
           <CodeHighlightTabs
-            bg={getBackground(quality)}
             style={style}
             code={{ ...codeHighlightProps, code: formattedCode }}
           />
@@ -55,15 +51,4 @@ export function JavaSingle({ code, quality }: JavaSingleProps) {
       </Transition>
     </>
   );
-}
-
-function getBackground(quality?: Quality) {
-  switch (quality) {
-    case "good":
-      return "var(--mantine-color-green-0)";
-    case "bad":
-      return "var(--mantine-color-red-0)";
-    default:
-      return "var(--mantine-color-gray-0)";
-  }
 }

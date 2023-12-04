@@ -1,5 +1,15 @@
-import { Flex, Tabs, Paper, CloseButton, Center, Group } from "@mantine/core";
+import {
+  Flex,
+  Tabs,
+  Paper,
+  CloseButton,
+  Center,
+  Group,
+  ActionIcon,
+  MantineThemeOverride,
+} from "@mantine/core";
 import { Txt } from "./Text";
+import { useMantineColorScheme } from "@mantine/core";
 
 import {
   IconHome,
@@ -8,8 +18,11 @@ import {
   IconZoomCode,
   IconCodeAsterix,
   IconMail,
+  IconMoon,
+  IconSun,
 } from "@tabler/icons-react";
 import { useNavigate } from "react-router-dom";
+import { atomDark } from "../data/themes";
 
 const data = {
   home: {
@@ -48,19 +61,43 @@ export type TPage = keyof typeof data;
 
 export interface HeaderProps {
   close: () => void;
+  setTheme: (theme: MantineThemeOverride) => void;
   style: React.CSSProperties;
 }
 
-export function Header({ close, style }: HeaderProps) {
+export function Header({ close, setTheme, style }: HeaderProps) {
   const navigate = useNavigate();
+  const { setColorScheme } = useMantineColorScheme();
 
   return (
     <Flex w={"100vw"} bg={"white"} justify={"center"} style={style}>
-      <Paper w={"100%"} h={"100%"} shadow={"md"}>
+      <Paper w={"100%"} h={"100%"} shadow={"md"} radius={0}>
         <Group w={"100%"} justify="space-between">
-          <Center>
-            <CloseButton ml={"1rem"} size={"lg"} onClick={close} />
-          </Center>
+          <Group ml={"1rem"}>
+            <Center>
+              <CloseButton size={"lg"} onClick={close} />
+            </Center>
+
+            <Center>
+              <ActionIcon
+                variant="light"
+                darkHidden
+                onClick={() => {
+                  setColorScheme("dark");
+                  setTheme(atomDark);
+                }}
+              >
+                <IconMoon />
+              </ActionIcon>
+              <ActionIcon
+                variant="light"
+                lightHidden
+                onClick={() => setColorScheme("light")}
+              >
+                <IconSun />
+              </ActionIcon>
+            </Center>
+          </Group>
 
           <Tabs
             defaultValue={"/"}

@@ -140,7 +140,6 @@ export function S01B() {
                       // ...
                     }
                 }`}
-              quality="bad"
             />,
             <JavaSplit
               left={
@@ -170,7 +169,6 @@ export function S01B() {
                           // ...
                         }
                     }`}
-              quality="good"
             />,
           ]}
         />
