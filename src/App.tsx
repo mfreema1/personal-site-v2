@@ -1,4 +1,3 @@
-import "@mantine/code-highlight/styles.css";
 import {
   ActionIcon,
   Affix,
