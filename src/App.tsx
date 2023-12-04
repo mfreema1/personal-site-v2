@@ -1,3 +1,4 @@
+import "@mantine/code-highlight/styles.css";
 import {
   ActionIcon,
   Affix,
@@ -5,17 +6,13 @@ import {
   MantineThemeOverride,
   Transition,
 } from "@mantine/core";
-import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
-import { useState } from "react";
-
 import { IconMenu } from "@tabler/icons-react";
-
-import { Home } from "./pages/home/Home";
+import { useState } from "react";
+import { Outlet, RouterProvider, createBrowserRouter } from "react-router-dom";
+import { Header } from "./components/Header";
 import { Breadth } from "./pages/breadth/Breadth";
 import { S01B } from "./pages/breadth/S01B";
-
-import "@mantine/code-highlight/styles.css";
-import { Header } from "./components/Header";
+import { Home } from "./pages/home/Home";
 
 export interface AppProps {
   setTheme: (theme: MantineThemeOverride) => void;

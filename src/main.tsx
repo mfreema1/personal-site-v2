@@ -1,9 +1,7 @@
-import "@mantine/core/styles.css";
 import "@mantine/code-highlight/styles.css";
-
+import "@mantine/core/styles.css";
 import React from "react";
 import ReactDOM from "react-dom/client";
-
 import { Root } from "./Root.tsx";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(

@@ -1,7 +1,7 @@
-import { Table, Group } from "@mantine/core";
+import { Group, Table } from "@mantine/core";
 import { Link } from "react-router-dom";
-import { Topic } from "./Topic";
 import { Txt } from "./Text";
+import { Topic } from "./Topic";
 
 export interface PageTableProps {
   rows: { id: string; title: string; topicIds: string[] }[];

@@ -1,6 +1,6 @@
-import { Title, Text } from "@mantine/core";
-import { PageTable } from "../../components/PageTable";
+import { Text, Title } from "@mantine/core";
 import { Page } from "../../components/Page";
+import { PageTable } from "../../components/PageTable";
 import { Quote } from "../../components/Quote";
 
 export function Breadth() {

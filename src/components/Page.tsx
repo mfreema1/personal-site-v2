@@ -1,4 +1,4 @@
-import { Stack, Breadcrumbs } from "@mantine/core";
+import { Breadcrumbs, Stack } from "@mantine/core";
 import { Link } from "react-router-dom";
 import { Txt } from "./Text";
 

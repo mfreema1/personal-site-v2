@@ -1,28 +1,27 @@
 import {
-  Flex,
-  Tabs,
-  Paper,
-  CloseButton,
-  Center,
-  Group,
   ActionIcon,
+  Center,
+  CloseButton,
+  Flex,
+  Group,
   MantineThemeOverride,
+  Paper,
+  Tabs,
+  useMantineColorScheme,
 } from "@mantine/core";
-import { Txt } from "./Text";
-import { useMantineColorScheme } from "@mantine/core";
-
 import {
-  IconHome,
-  IconUserCircle,
-  IconMessageCode,
-  IconZoomCode,
   IconCodeAsterix,
+  IconHome,
   IconMail,
+  IconMessageCode,
   IconMoon,
   IconSun,
+  IconUserCircle,
+  IconZoomCode,
 } from "@tabler/icons-react";
 import { useNavigate } from "react-router-dom";
 import { atomDark } from "../data/themes";
+import { Txt } from "./Text";
 
 const data = {
   home: {

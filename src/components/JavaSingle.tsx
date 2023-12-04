@@ -1,8 +1,8 @@
-import { useState } from "react";
+import { CodeHighlightTabs } from "@mantine/code-highlight";
+import { Skeleton, Transition } from "@mantine/core";
 import prettier from "prettier";
 import parserJava from "prettier-plugin-java";
-import { Skeleton, Transition } from "@mantine/core";
-import { CodeHighlightTabs } from "@mantine/code-highlight";
+import { useState } from "react";
 import { DiJava } from "react-icons/di";
 
 export interface JavaSingleProps {

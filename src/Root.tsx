@@ -1,6 +1,6 @@
 import { MantineProvider } from "@mantine/core";
-import App from "./App";
 import { useState } from "react";
+import App from "./App";
 import { atomLight } from "./data/themes";
 
 export interface RootProps {

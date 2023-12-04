@@ -1,12 +1,12 @@
-import { Title, Stack, Code, Accordion, Text } from "@mantine/core";
-import { Quote } from "../../components/Quote";
-import { Note } from "../../components/Note";
-import { ProConTable } from "../../components/ProConTable";
-import { JavaSplit } from "../../components/JavaSplit";
-import { Term } from "../../components/Term";
-import { Section } from "../../components/Section";
-import { Page } from "../../components/Page";
+import { Accordion, Code, Stack, Text, Title } from "@mantine/core";
 import { JavaSingle } from "../../components/JavaSingle";
+import { JavaSplit } from "../../components/JavaSplit";
+import { Note } from "../../components/Note";
+import { Page } from "../../components/Page";
+import { ProConTable } from "../../components/ProConTable";
+import { Quote } from "../../components/Quote";
+import { Section } from "../../components/Section";
+import { Term } from "../../components/Term";
 import { Txt } from "../../components/Text";
 
 export function S01B() {
