@@ -3,11 +3,13 @@ import {
   Affix,
   Grid,
   MantineThemeOverride,
+  Stack,
   Transition,
 } from "@mantine/core";
 import { IconMenu } from "@tabler/icons-react";
 import { useState } from "react";
 import { Outlet, RouterProvider, createBrowserRouter } from "react-router-dom";
+import { Footer } from "./components/Footer";
 import { Header } from "./components/Header";
 import { Breadth } from "./pages/breadth/Breadth";
 import { S01B } from "./pages/breadth/S01B";
@@ -79,13 +81,16 @@ export function Layout({ setTheme }: LayoutProps) {
           )}
         </Transition>
       </Affix>
-      <Grid gutter={0}>
-        <Grid.Col span={"auto"} />
-        <Grid.Col my={"6rem"} span={{ base: 10, md: 7, lg: 5 }}>
-          <Outlet />
-        </Grid.Col>
-        <Grid.Col span={"auto"} />
-      </Grid>
+      <Stack justify="space-between" mih="100vh" gap={0}>
+        <Grid gutter={0}>
+          <Grid.Col span={"auto"} />
+          <Grid.Col my={"6rem"} span={{ base: 10, md: 7, lg: 5 }}>
+            <Outlet />
+          </Grid.Col>
+          <Grid.Col span={"auto"} />
+        </Grid>
+        <Footer />
+      </Stack>
     </>
   );
 }

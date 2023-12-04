@@ -23,9 +23,6 @@ export function S01B() {
             text="To understand is to perceive patterns."
             author="Isaiah Berlin"
           />
-          <Txt s="san" d fz="sm">
-            Mark Freeman
-          </Txt>
         </Stack>
 
         <Txt s="ser" fz="lg">
