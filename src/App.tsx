@@ -46,7 +46,6 @@ export function Layout({ setTheme }: LayoutProps) {
 
   return (
     <>
-      <Affix position={{ left: 0, top: 0 }} zIndex={-1} w={"100%"} h={"100%"} />
       <Affix position={{ left: 0, top: 0 }} w={"100vw"} zIndex={1}>
         <Transition
           mounted={headerEnter}
@@ -80,16 +79,10 @@ export function Layout({ setTheme }: LayoutProps) {
           )}
         </Transition>
       </Affix>
-      <Grid py={"2rem"} mih={"100vh"} gutter={0}>
+      <Grid gutter={0}>
         <Grid.Col span={"auto"} />
-        <Grid.Col mih={"calc(100vh - (2 * 2rem))"} span={6}>
-          <Grid>
-            <Grid.Col span={"auto"} />
-            <Grid.Col my={"4rem"} span={10}>
-              <Outlet />
-            </Grid.Col>
-            <Grid.Col span={"auto"} />
-          </Grid>
+        <Grid.Col my={"6rem"} span={{ base: 10, md: 7, lg: 5 }}>
+          <Outlet />
         </Grid.Col>
         <Grid.Col span={"auto"} />
       </Grid>

@@ -7,6 +7,7 @@ import {
   MantineThemeOverride,
   Paper,
   Tabs,
+  px,
   useMantineColorScheme,
 } from "@mantine/core";
 import {
@@ -71,10 +72,15 @@ export function Header({ close, setTheme, style }: HeaderProps) {
   return (
     <Flex w={"100vw"} bg={"white"} justify={"center"} style={style}>
       <Paper w={"100%"} h={"100%"} shadow={"md"} radius={0}>
-        <Group w={"100%"} justify="space-between">
+        <Group
+          w={"100%"}
+          justify="space-between"
+          wrap="nowrap"
+          preventGrowOverflow={true}
+        >
           <Group ml={"1rem"}>
             <Center>
-              <CloseButton size={"lg"} onClick={close} />
+              <CloseButton size={"2rem"} onClick={close} />
             </Center>
 
             <Center>
@@ -86,14 +92,14 @@ export function Header({ close, setTheme, style }: HeaderProps) {
                   setTheme(atomDark);
                 }}
               >
-                <IconMoon />
+                <IconMoon size={px("2rem")} />
               </ActionIcon>
               <ActionIcon
                 variant="light"
                 lightHidden
                 onClick={() => setColorScheme("light")}
               >
-                <IconSun />
+                <IconSun size={px("2rem")} />
               </ActionIcon>
             </Center>
           </Group>
