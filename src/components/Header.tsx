@@ -6,7 +6,6 @@ import {
   MantineThemeOverride,
   Paper,
   Tabs,
-  px,
   useMantineColorScheme,
 } from "@mantine/core";
 import {
@@ -28,32 +27,32 @@ const data = {
   home: {
     path: "/",
     title: "Home",
-    icon: <IconHome size={16} />,
+    icon: <IconHome size={22} />,
   },
   about: {
     path: "/about",
     title: "About",
-    icon: <IconUserCircle size={16} />,
+    icon: <IconUserCircle size={22} />,
   },
   breadth: {
     path: "/breadth",
     title: "Breadth",
-    icon: <IconMessageCode size={16} />,
+    icon: <IconMessageCode size={22} />,
   },
   depth: {
     path: "/depth",
     title: "Depth",
-    icon: <IconZoomCode size={16} />,
+    icon: <IconZoomCode size={22} />,
   },
   other: {
     path: "/other",
     title: "Other",
-    icon: <IconCodeAsterix size={16} />,
+    icon: <IconCodeAsterix size={22} />,
   },
   contact: {
     path: "/contact",
     title: "Contact",
-    icon: <IconMail size={16} />,
+    icon: <IconMail size={22} />,
   },
 } as const;
 
@@ -65,6 +64,7 @@ export interface HeaderProps {
   style: React.CSSProperties;
 }
 
+// TODO: Lock header always on for mobile?
 export function Header({ close, setTheme, style }: HeaderProps) {
   const navigate = useNavigate();
   const { setColorScheme } = useMantineColorScheme();
@@ -78,10 +78,10 @@ export function Header({ close, setTheme, style }: HeaderProps) {
           wrap="nowrap"
           preventGrowOverflow={true}
         >
-          <Group ml={"1rem"}>
+          <Group ml={"1rem"} gap={12}>
             <Center>
-              <ActionIcon variant="light" size={"2rem"} onClick={close}>
-                <IconX size={px("2rem")} />
+              <ActionIcon variant="light" size="md" onClick={close}>
+                <IconX size={22} />
               </ActionIcon>
             </Center>
 
@@ -94,14 +94,15 @@ export function Header({ close, setTheme, style }: HeaderProps) {
                   setTheme(atomDark);
                 }}
               >
-                <IconMoon size={px("2rem")} />
+                <IconMoon size={22} />
               </ActionIcon>
               <ActionIcon
                 variant="light"
                 lightHidden
+                size="md"
                 onClick={() => setColorScheme("light")}
               >
-                <IconSun size={px("2rem")} />
+                <IconSun size={22} />
               </ActionIcon>
             </Center>
           </Group>
@@ -109,16 +110,17 @@ export function Header({ close, setTheme, style }: HeaderProps) {
           <Tabs
             defaultValue={"/"}
             onChange={(path) => navigate(path!)}
-            mr={"4rem"}
+            mr={"1rem"}
           >
             <Tabs.List>
               {Object.values(data).map((datum) => (
-                <Tabs.Tab
-                  value={datum.path}
-                  key={datum.path}
-                  leftSection={datum.icon}
-                >
-                  <Txt s={"san"}>{datum.title}</Txt>
+                <Tabs.Tab px={12} value={datum.path} key={datum.path}>
+                  <Group justify="space-between" gap={4}>
+                    {datum.icon}
+                    <Txt mantine={{ visibleFrom: "sm" }} s={"san"} fz="sm">
+                      {datum.title}
+                    </Txt>
+                  </Group>
                 </Tabs.Tab>
               ))}
             </Tabs.List>

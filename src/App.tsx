@@ -76,7 +76,7 @@ export function Layout({ setTheme }: LayoutProps) {
               style={style}
               onClick={() => setButtonEnter(false)}
             >
-              <IconMenu size={"2rem"} />
+              <IconMenu size={22} />
             </ActionIcon>
           )}
         </Transition>
