@@ -9,8 +9,8 @@ const base = createTheme({
     fontWeight: "700",
 
     sizes: {
-      h1: { fontWeight: "900", fontSize: rem(48) },
-      h2: { fontSize: rem(40) },
+      h1: { fontWeight: "900", fontSize: rem(40) },
+      h2: { fontSize: rem(36) },
     },
   },
 });

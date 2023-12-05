@@ -13,7 +13,7 @@ export function S01B() {
   return (
     <>
       <Page path="/breadth/S01B">
-        <Stack gap="xs">
+        <Stack gap="sm">
           <Title order={1}>
             <Text span inherit c="blue">
               Object-Oriented Design Patterns
