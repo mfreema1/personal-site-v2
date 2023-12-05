@@ -72,7 +72,7 @@ export function Layout({ setTheme }: LayoutProps) {
         >
           {(style) => (
             <ActionIcon
-              variant="light"
+              variant="filled"
               style={style}
               onClick={() => setButtonEnter(false)}
             >

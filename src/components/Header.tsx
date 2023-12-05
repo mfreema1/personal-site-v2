@@ -1,7 +1,6 @@
 import {
   ActionIcon,
   Center,
-  CloseButton,
   Flex,
   Group,
   MantineThemeOverride,
@@ -18,6 +17,7 @@ import {
   IconMoon,
   IconSun,
   IconUserCircle,
+  IconX,
   IconZoomCode,
 } from "@tabler/icons-react";
 import { useNavigate } from "react-router-dom";
@@ -80,7 +80,9 @@ export function Header({ close, setTheme, style }: HeaderProps) {
         >
           <Group ml={"1rem"}>
             <Center>
-              <CloseButton size={"2rem"} onClick={close} />
+              <ActionIcon variant="light" size={"2rem"} onClick={close}>
+                <IconX size={px("2rem")} />
+              </ActionIcon>
             </Center>
 
             <Center>
