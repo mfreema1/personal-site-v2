@@ -5,9 +5,9 @@ export function Footer() {
   return (
     <Flex>
       <Group py="1rem" px="2rem" justify="space-between">
-        <Group>
-          <Avatar src="/favicon.ico" />
-          <Txt s="san" d>
+        <Group gap={"xs"}>
+          <Avatar size="sm" src="/favicon.ico" />
+          <Txt s="san" d fz="xs">
             Mark Freeman
           </Txt>
         </Group>
