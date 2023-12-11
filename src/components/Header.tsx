@@ -64,7 +64,6 @@ export interface HeaderProps {
   style: React.CSSProperties;
 }
 
-// TODO: Lock header always on for mobile?
 export function Header({ close, changeColorScheme, style }: HeaderProps) {
   const navigate = useNavigate();
   const { setColorScheme: setMantineColorScheme } = useMantineColorScheme();
@@ -79,7 +78,7 @@ export function Header({ close, changeColorScheme, style }: HeaderProps) {
           preventGrowOverflow={true}
         >
           <Group ml={"1rem"} gap={12}>
-            <Center>
+            <Center visibleFrom="sm">
               <ActionIcon variant="light" size="md" onClick={close}>
                 <IconX size={22} />
               </ActionIcon>
