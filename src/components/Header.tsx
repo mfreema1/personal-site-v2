@@ -3,7 +3,6 @@ import {
   Center,
   Flex,
   Group,
-  MantineThemeOverride,
   Paper,
   Tabs,
   useMantineColorScheme,
@@ -14,13 +13,13 @@ import {
   IconMail,
   IconMessageCode,
   IconMoon,
+  IconPalette,
   IconSun,
   IconUserCircle,
   IconX,
   IconZoomCode,
 } from "@tabler/icons-react";
 import { useNavigate } from "react-router-dom";
-import { atomDark } from "../data/themes";
 import { Txt } from "./Text";
 
 const data = {
@@ -60,14 +59,15 @@ export type TPage = keyof typeof data;
 
 export interface HeaderProps {
   close: () => void;
-  setTheme: (theme: MantineThemeOverride) => void;
+  changeColorScheme: () => void;
+
   style: React.CSSProperties;
 }
 
 // TODO: Lock header always on for mobile?
-export function Header({ close, setTheme, style }: HeaderProps) {
+export function Header({ close, changeColorScheme, style }: HeaderProps) {
   const navigate = useNavigate();
-  const { setColorScheme } = useMantineColorScheme();
+  const { setColorScheme: setMantineColorScheme } = useMantineColorScheme();
 
   return (
     <Flex w={"100vw"} bg={"white"} justify={"center"} style={style}>
@@ -90,8 +90,7 @@ export function Header({ close, setTheme, style }: HeaderProps) {
                 variant="light"
                 darkHidden
                 onClick={() => {
-                  setColorScheme("dark");
-                  setTheme(atomDark);
+                  setMantineColorScheme("dark");
                 }}
               >
                 <IconMoon size={22} />
@@ -100,9 +99,17 @@ export function Header({ close, setTheme, style }: HeaderProps) {
                 variant="light"
                 lightHidden
                 size="md"
-                onClick={() => setColorScheme("light")}
+                onClick={() => {
+                  setMantineColorScheme("light");
+                }}
               >
                 <IconSun size={22} />
+              </ActionIcon>
+            </Center>
+
+            <Center>
+              <ActionIcon variant="light" onClick={changeColorScheme}>
+                <IconPalette size={22} />
               </ActionIcon>
             </Center>
           </Group>

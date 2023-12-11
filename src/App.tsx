@@ -1,33 +1,38 @@
-import {
-  ActionIcon,
-  Affix,
-  Grid,
-  MantineThemeOverride,
-  Stack,
-  Transition,
-} from "@mantine/core";
+import { ActionIcon, Affix, Grid, Stack, Transition } from "@mantine/core";
 import { IconMenu } from "@tabler/icons-react";
 import { useState } from "react";
 import { Outlet, RouterProvider, createBrowserRouter } from "react-router-dom";
 import { Footer } from "./components/Footer";
 import { Header } from "./components/Header";
+import { TColorScheme, colorSchemes } from "./data/themes";
 import { Breadth } from "./pages/breadth/Breadth";
 import { S01B } from "./pages/breadth/S01B";
 import { Home } from "./pages/home/Home";
 
-export interface AppProps {
-  setTheme: (theme: MantineThemeOverride) => void;
-}
+export function App() {
+  const [colorSchemeIndex, setColorSchemeIndex] = useState(0);
+  const [colorScheme, setColorScheme] = useState<TColorScheme>(
+    colorSchemes[colorSchemeIndex],
+  );
 
-export function App({ setTheme }: AppProps) {
+  const changeColorScheme = () => {
+    const newIndex = colorSchemeIndex + 1;
+
+    setColorSchemeIndex(newIndex);
+    setColorScheme(colorSchemes[newIndex % colorSchemes.length]);
+  };
+
   const router = createBrowserRouter([
     {
-      Component: () => <Layout setTheme={setTheme} />,
+      Component: () => <Layout changeColorScheme={changeColorScheme} />,
       children: [
         { path: "/", Component: Home },
         { path: "/about", Component: () => <p>About</p> },
         { path: "/breadth", Component: Breadth },
-        { path: "/breadth/S01B", Component: S01B },
+        {
+          path: "/breadth/S01B",
+          Component: () => <S01B colorScheme={colorScheme} />,
+        },
         { path: "/depth", Component: () => <p>Depth</p> },
         { path: "/other", Component: () => <p>Other</p> },
         { path: "/contact", Component: () => <p>Contact</p> },
@@ -38,11 +43,11 @@ export function App({ setTheme }: AppProps) {
   return <RouterProvider router={router} />;
 }
 
-export interface LayoutProps {
-  setTheme: (theme: MantineThemeOverride) => void;
+interface LayoutProps {
+  changeColorScheme: () => void;
 }
 
-export function Layout({ setTheme }: LayoutProps) {
+export function Layout({ changeColorScheme }: LayoutProps) {
   const [headerEnter, setHeaderEnter] = useState(true);
   const [buttonEnter, setButtonEnter] = useState(false);
 
@@ -58,7 +63,7 @@ export function Layout({ setTheme }: LayoutProps) {
           {(style) => (
             <Header
               style={style}
-              setTheme={setTheme}
+              changeColorScheme={changeColorScheme}
               close={() => setHeaderEnter(false)}
             />
           )}

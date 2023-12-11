@@ -8,7 +8,7 @@ export function Footer() {
         <Group gap={"xs"}>
           <Avatar size="sm" src="/favicon.ico" />
           <Txt s="san" d fz="xs">
-            Mark Freeman
+            Made with ❤️
           </Txt>
         </Group>
       </Group>

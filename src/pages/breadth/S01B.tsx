@@ -1,5 +1,5 @@
 import { Accordion, Code, Stack, Text, Title } from "@mantine/core";
-import { JavaSingle } from "../../components/JavaSingle";
+import { Java } from "../../components/Java";
 import { JavaSplit } from "../../components/JavaSplit";
 import { Note } from "../../components/Note";
 import { Page } from "../../components/Page";
@@ -9,7 +9,18 @@ import { Section } from "../../components/Section";
 import { Term } from "../../components/Term";
 import { Txt } from "../../components/Text";
 
-export function S01B() {
+import abstractFactoryClass from "../../assets/examples/S01B/AbstractFactoryClass.java?raw";
+import abstractFactoryFactoryClass from "../../assets/examples/S01B/AbstractFactoryFactoryClass.java?raw";
+import factoryClass from "../../assets/examples/S01B/FactoryClass.java?raw";
+import factoryMethod from "../../assets/examples/S01B/FactoryMethod.java?raw";
+import workInConstructor from "../../assets/examples/S01B/WorkInConstructor.java?raw";
+import { TColorScheme } from "../../data/themes";
+
+export interface S01BProps {
+  colorScheme: TColorScheme;
+}
+
+export function S01B({ colorScheme }: S01BProps) {
   return (
     <>
       <Page path="/breadth/S01B">
@@ -124,19 +135,8 @@ export function S01B() {
                   that should generally be scrutinized.
                 </Txt>
               }
-              code={`
-                public class Foo {
-
-                    private final Frob frob;
-            
-                    public Foo(Bar bar) {
-                        this.frob = frob(bar);
-                    }
-            
-                    private static Frob frob(Bar bar) {
-                      // ...
-                    }
-                }`}
+              code={workInConstructor}
+              colorScheme={colorScheme}
             />,
             <JavaSplit
               left={
@@ -149,23 +149,8 @@ export function S01B() {
                   in how we make a <Code>Foo</Code>.
                 </Txt>
               }
-              code={`
-                    public class Foo {
-
-                        private final Frob frob;
-
-                        private Foo(Frob frob) {
-                            this.frob = frob;
-                        }
-
-                        public static Foo create(Bar bar) {
-                            return new Foo(frob(bar));
-                        }
-
-                        private static Frob frob(Bar bar) {
-                          // ...
-                        }
-                    }`}
+              code={factoryMethod}
+              colorScheme={colorScheme}
             />,
           ]}
         />
@@ -182,25 +167,11 @@ export function S01B() {
                   everything in 1 class. It is just broken out into a separate{" "}
                   <Code>static</Code> method.
                 </Txt>
-                <JavaSingle
-                  code={`
-                    public class Foo {
-
-                        private final Frob frob;
-
-                        private Foo(Frob frob) {
-                            this.frob = frob;
-                        }
-
-                        public static Foo create(Bar bar) {
-                            return new Foo(frob(bar));
-                        }
-                    }`}
-                />
+                <Java code={factoryMethod} colorScheme={colorScheme} />
               </Stack>
             </Accordion.Panel>
           </Accordion.Item>
-          <Accordion.Item key={"factory class"} value={"factory class"}>
+          <Accordion.Item key={"factoryClass"} value={"factory class"}>
             <Accordion.Control>
               <Txt s="san">Factory Class</Txt>
             </Accordion.Control>
@@ -227,24 +198,7 @@ export function S01B() {
                   approach:
                 </Txt>
 
-                <JavaSingle
-                  code={`
-                  public class FooFactory {
-  
-                      public static Foo createFoo(Bar bar) {
-                          return new Foo(frob(bar));
-                      }
-                  
-                      public class Foo {
-                  
-                          private final Frob frob;
-                              
-                          private Foo(Frob frob) {
-                              this.frob = frob;
-                          }
-                      }
-                  }`}
-                />
+                <Java code={factoryClass} colorScheme={colorScheme} />
               </Stack>
             </Accordion.Panel>
           </Accordion.Item>
@@ -265,31 +219,9 @@ export function S01B() {
                   Instead, we can do it from an abstract factory{" "}
                   <Code>FooFactory</Code>.
                 </Txt>
-                <JavaSingle
-                  code={`
-                  public interface Foo {
-                    
-                    // ...
-                  }
 
-                  public class Frob implements Foo {
+                <Java code={abstractFactoryClass} colorScheme={colorScheme} />
 
-                    // ...
-                  }
-
-                  public interface FooFactory {
-
-                    Foo createFoo();
-                  }
-
-                  public class FrobFactory implements FooFactory {
-
-                    @Override
-                    public Foo createFoo() {
-                      return new Frob();
-                    }
-                  }`}
-                />
                 <Txt s="ser" fz="sm">
                   This pattern is generally regarded as just the factory method
                   pattern, but it can help to think of this as just pulling up
@@ -318,22 +250,9 @@ export function S01B() {
                   just that step first:
                 </Txt>
 
-                <JavaSingle
-                  code={`
-                  public interface Foo {
-                    // ...
-                  }
-
-                  public interface FooFactory {
-
-                    Foo createFoo();
-                  } 
-
-                  public interface FooFactoryFactory {
-                    
-                    FooFactory createFooFactory();
-                  }
-                  `}
+                <Java
+                  code={abstractFactoryFactoryClass}
+                  colorScheme={colorScheme}
                 />
 
                 <Txt s="ser" fz="sm">
