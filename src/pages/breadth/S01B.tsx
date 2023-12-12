@@ -93,7 +93,7 @@ export function S01B({ colorScheme }: S01BProps) {
         <Note>
           Design patterns can commonly be applied at multiple levels or in
           different variations. Some situations may call for a twist on what you
-          see here, though it will arguably be the same pattern. same pattern.
+          see here, though it will arguably be the same pattern.
         </Note>
 
         <Section title="Factory">
