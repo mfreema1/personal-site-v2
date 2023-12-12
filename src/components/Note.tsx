@@ -1,35 +1,38 @@
-import { Alert, rem } from "@mantine/core";
+import { Alert, Text, rem } from "@mantine/core";
 import { IconPencil } from "@tabler/icons-react";
-import { Txt } from "./Text";
-
-export type Color = "b" | "y";
+import { AlertText } from "./text/AlertText";
 
 export interface NoteProps {
-  c?: Color;
   children: React.ReactNode;
 }
 
-export function Note({ c: color = "b", children }: NoteProps) {
+const styles = {
+  p: rem(16),
+  pr: rem(32),
+  pb: rem(32),
+  variant: "light",
+  icon: <IconPencil />,
+};
+
+export function Note(props: NoteProps) {
   return (
     <Alert
-      variant="light"
-      p={rem(16)}
-      pr={rem(32)}
-      pb={rem(32)}
-      color={getColor(color)}
-      title={<Txt s="san">Take Note</Txt>}
-      icon={<IconPencil />}
+      title={
+        <Text ff="Arvo, serif" fz="md">
+          Take Note
+        </Text>
+      }
+      {...styles}
     >
-      {children}
+      {wrap(props)}
     </Alert>
   );
 }
 
-const getColor = (color: Color) => {
-  switch (color) {
-    case "b":
-      return "blue";
-    case "y":
-      return "yellow";
-  }
-};
+function wrap({ children }: NoteProps) {
+  return typeof children === "string" ? (
+    <AlertText>{children}</AlertText>
+  ) : (
+    children
+  );
+}

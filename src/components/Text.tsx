@@ -31,11 +31,11 @@ export const Txt = forwardRef<HTMLParagraphElement, TxtProps>((props, ref) => {
   const tempStyle: MantineStyleProps = {};
 
   switch (style) {
-    case "ser":
-      tempStyle.ff = "Merriweather, serif";
-      break;
     case "san":
-      tempStyle.ff = "Roboto, sans-serif";
+      tempStyle.ff = "Arvo, serif";
+      break;
+    case "ser":
+      tempStyle.ff = "Fira Sans, sans-serif";
       break;
   }
 
@@ -69,16 +69,16 @@ const getFontWeight = (style: FontFace, bolded: boolean) => {
 const getBoldedFontWeight = (style: FontFace) => {
   switch (style) {
     case "ser":
-      throw new Error("No bolded serif font.");
+      return 400;
     case "san":
-      return 700;
+      return 400;
   }
 };
 
 const getUnboldedFontWeight = (style: FontFace) => {
   switch (style) {
     case "ser":
-      return 300;
+      return 400;
     case "san":
       return 400;
   }

@@ -3,9 +3,9 @@ import { TColorScheme } from "../data/themes";
 import { Java } from "./Java";
 
 export interface JavaSplitProps {
-  left: React.ReactElement;
   code: string;
   colorScheme: TColorScheme;
+  children: React.ReactNode;
 }
 
 /**
@@ -13,11 +13,11 @@ export interface JavaSplitProps {
  * between the two rows is smaller than the gap between other elements in the
  * page stack. This makes it clearer what we are referring to with {@link left}.
  */
-export function JavaSplit({ left, code, colorScheme }: JavaSplitProps) {
+export function JavaSplit({ code, colorScheme, children }: JavaSplitProps) {
   return (
     <>
       <Grid w={"100%"} gutter="sm">
-        <Grid.Col span={{ base: 12, md: 4 }}>{left}</Grid.Col>
+        <Grid.Col span={{ base: 12, md: 4 }}>{children}</Grid.Col>
         <Grid.Col span={{ base: 12, md: 8 }}>
           <Java code={code} colorScheme={colorScheme} />
         </Grid.Col>

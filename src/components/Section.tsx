@@ -1,21 +1,24 @@
-import { Stack } from "@mantine/core";
+import { Stack, Title } from "@mantine/core";
 
 export interface SectionProps {
-  title: React.ReactNode;
-  components: React.ReactNode[];
+  title: string;
+  children: Iterable<React.ReactNode>;
 }
 
-export function Section({ title, components }: SectionProps) {
-  const first = components[0];
-  const rest = components.slice(1);
+export function Section({ title, children }: SectionProps) {
+  const arr = [...children];
+
+  const first = arr[0];
+  const rest = arr.slice(1);
 
   return (
-    <Stack gap={"xl"}>
-      <Stack gap={"xs"}>
-        {title}
+    <Stack gap="xl">
+      <Stack gap="xs">
+        <Title order={2} c="blue">
+          {title}
+        </Title>
         {first}
       </Stack>
-
       {...rest}
     </Stack>
   );
