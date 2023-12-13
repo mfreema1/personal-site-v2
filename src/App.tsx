@@ -1,8 +1,7 @@
-import { ActionIcon, Affix, Grid, Stack, Transition } from "@mantine/core";
+import { ActionIcon, Affix, Transition } from "@mantine/core";
 import { IconMenu } from "@tabler/icons-react";
 import { useState } from "react";
 import { Outlet, RouterProvider, createBrowserRouter } from "react-router-dom";
-import { Footer } from "./components/Footer";
 import { Header } from "./components/Header";
 import { TColorScheme, colorSchemes } from "./data/themes";
 import { Breadth } from "./pages/breadth/Breadth";
@@ -86,16 +85,17 @@ export function Layout({ changeColorScheme }: LayoutProps) {
           )}
         </Transition>
       </Affix>
-      <Stack justify="space-between" mih="100vh" gap={0}>
+      <Outlet />
+      {/* <Stack justify="space-between" mih="100vh" gap={0}>
         <Grid gutter={0}>
-          <Grid.Col span={"auto"} />
-          <Grid.Col my={"6rem"} span={{ base: 10, md: 7, lg: 5 }}>
+          <Grid.Col span="auto" />
+          <Grid.Col my="6rem" span={{ base: 10, md: 7, lg: 5 }}>
             <Outlet />
           </Grid.Col>
-          <Grid.Col span={"auto"} />
+          <Grid.Col span="auto" />
         </Grid>
         <Footer />
-      </Stack>
+      </Stack> */}
     </>
   );
 }
