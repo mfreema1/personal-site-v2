@@ -1,15 +1,18 @@
-import { Text } from "@mantine/core";
+import { Text, TextProps } from "@mantine/core";
+import { forwardRef } from "react";
 
-export interface BodyText {
+export interface BodyTextProps extends TextProps {
   children: React.ReactNode;
 }
 
-export function BodyText({ children }: BodyText) {
-  return (
-    <>
-      <Text ff="Fira Sans, sans-serif" fz="lg">
+export const BodyText = forwardRef<HTMLParagraphElement, BodyTextProps>(
+  (props, ref) => {
+    const { children, ...rest } = props;
+
+    return (
+      <Text {...rest} ref={ref} ff="Fira Sans, sans-serif" fz="lg">
         {children}
       </Text>
-    </>
-  );
-}
+    );
+  },
+);

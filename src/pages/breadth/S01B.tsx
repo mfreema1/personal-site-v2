@@ -1,12 +1,12 @@
 import { Accordion, Code, Stack } from "@mantine/core";
-import { Java } from "../../components/Java";
-import { JavaSplit } from "../../components/JavaSplit";
 import { Note } from "../../components/Note";
 import { Page } from "../../components/Page";
 import { ProConTable } from "../../components/ProConTable";
 import { Section } from "../../components/Section";
 import { Term } from "../../components/Term";
 import { Txt } from "../../components/Text";
+import { Java } from "../../components/code/Java";
+import { JavaSplit } from "../../components/code/JavaSplit";
 
 import abstractFactoryClass from "../../assets/examples/S01B/AbstractFactoryClass.java?raw";
 import abstractFactoryFactoryClass from "../../assets/examples/S01B/AbstractFactoryFactoryClass.java?raw";
@@ -100,15 +100,23 @@ export function S01B({ colorScheme }: S01BProps) {
 
           <Section title="Factory">
             <BodyText>
-              The essence of <Term id="factory" text="factory" fz="lg" /> is to
-              take the logic of creating an object and give it to another
+              The essence of{" "}
+              <Term id="factory">
+                <BodyText span c="blue">
+                  factory
+                </BodyText>
+              </Term>{" "}
+              is to take the logic of creating an object and give it to another
               object. This can appear in many ways. A factory can appear as a
               method of the class being constructed or as a separate class
               entirely. It also can commonly have either concrete or abstract
               return types. Let's take a look at a simple factory method:
             </BodyText>
 
-            <JavaSplit code={workInConstructor} colorScheme={colorScheme}>
+            <JavaSplit
+              file={{ name: "Foo.java", code: workInConstructor }}
+              colorScheme={colorScheme}
+            >
               <AsideText>
                 Here is a class that's doing work in the constructor. Ideally,
                 its constructor would just be doing simple assignment, like{" "}
@@ -117,7 +125,10 @@ export function S01B({ colorScheme }: S01BProps) {
               </AsideText>
             </JavaSplit>
 
-            <JavaSplit code={factoryMethod} colorScheme={colorScheme}>
+            <JavaSplit
+              file={{ name: "Foo.java", code: factoryMethod }}
+              colorScheme={colorScheme}
+            >
               <AsideText>
                 Here, <Code>create</Code> has become a factory method for{" "}
                 <Code>Foo</Code>. Note that the <Code>frob</Code> logic has been
@@ -141,7 +152,10 @@ export function S01B({ colorScheme }: S01BProps) {
                     everything in 1 class. It is just broken out into a separate{" "}
                     <Code>static</Code> method.
                   </AsideText>
-                  <Java code={factoryMethod} colorScheme={colorScheme} />
+                  <Java
+                    files={{ name: "Foo.java", code: factoryMethod }}
+                    colorScheme={colorScheme}
+                  />
                 </Stack>
               </Accordion.Panel>
             </Accordion.Item>
@@ -169,7 +183,10 @@ export function S01B({ colorScheme }: S01BProps) {
                     Below, we've taken the <Code>private</Code> constructor
                     approach:
                   </AsideText>
-                  <Java code={factoryClass} colorScheme={colorScheme} />
+                  <Java
+                    files={{ name: "FooFactory.java", code: factoryClass }}
+                    colorScheme={colorScheme}
+                  />
                 </Stack>
               </Accordion.Panel>
             </Accordion.Item>
@@ -190,7 +207,13 @@ export function S01B({ colorScheme }: S01BProps) {
                     Instead, we can do it from an abstract factory{" "}
                     <Code>FooFactory</Code>.
                   </AsideText>
-                  <Java code={abstractFactoryClass} colorScheme={colorScheme} />
+                  <Java
+                    files={{
+                      name: "FrobFactory.java",
+                      code: abstractFactoryClass,
+                    }}
+                    colorScheme={colorScheme}
+                  />
                   <AsideText>
                     This pattern is generally regarded as just the factory
                     method pattern, but it can help to think of this as just
@@ -219,7 +242,10 @@ export function S01B({ colorScheme }: S01BProps) {
                     pattern applied to it. Let's see just that step first:
                   </AsideText>
                   <Java
-                    code={abstractFactoryFactoryClass}
+                    files={{
+                      name: "FooFactoryFactory.java",
+                      code: abstractFactoryFactoryClass,
+                    }}
                     colorScheme={colorScheme}
                   />
                   <AsideText>

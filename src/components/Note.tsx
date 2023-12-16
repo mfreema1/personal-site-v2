@@ -14,7 +14,7 @@ const styles = {
   icon: <IconPencil />,
 };
 
-export function Note(props: NoteProps) {
+export function Note({ children }: NoteProps) {
   return (
     <Alert
       title={
@@ -24,15 +24,7 @@ export function Note(props: NoteProps) {
       }
       {...styles}
     >
-      {wrap(props)}
+      <AlertText>{children}</AlertText>
     </Alert>
-  );
-}
-
-function wrap({ children }: NoteProps) {
-  return typeof children === "string" ? (
-    <AlertText>{children}</AlertText>
-  ) : (
-    children
   );
 }

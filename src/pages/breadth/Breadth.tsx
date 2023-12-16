@@ -43,6 +43,11 @@ export function Breadth() {
                 title: "Object-Oriented Design Patterns",
                 topicIds: ["java", "class-design"],
               },
+              {
+                id: "S02B",
+                title: "Class-Level Proxy Cutovers",
+                topicIds: ["java", "class-design"],
+              },
             ]}
           />
         </Page>

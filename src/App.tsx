@@ -6,6 +6,7 @@ import { Header } from "./components/Header";
 import { TColorScheme, colorSchemes } from "./data/themes";
 import { Breadth } from "./pages/breadth/Breadth";
 import { S01B } from "./pages/breadth/S01B";
+import { S02B } from "./pages/breadth/S02B";
 import { Home } from "./pages/home/Home";
 
 export function App() {
@@ -31,6 +32,10 @@ export function App() {
         {
           path: "/breadth/S01B",
           Component: () => <S01B colorScheme={colorScheme} />,
+        },
+        {
+          path: "/breadth/S02B",
+          Component: () => <S02B colorScheme={colorScheme} />,
         },
         { path: "/depth", Component: () => <p>Depth</p> },
         { path: "/other", Component: () => <p>Other</p> },
@@ -86,16 +91,6 @@ export function Layout({ changeColorScheme }: LayoutProps) {
         </Transition>
       </Affix>
       <Outlet />
-      {/* <Stack justify="space-between" mih="100vh" gap={0}>
-        <Grid gutter={0}>
-          <Grid.Col span="auto" />
-          <Grid.Col my="6rem" span={{ base: 10, md: 7, lg: 5 }}>
-            <Outlet />
-          </Grid.Col>
-          <Grid.Col span="auto" />
-        </Grid>
-        <Footer />
-      </Stack> */}
     </>
   );
 }
