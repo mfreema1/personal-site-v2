@@ -15,7 +15,7 @@ export function Home() {
           <Space h="md" />
           <BodyText>I am a Software Engineer</BodyText>
           <AsideText>
-            (Distributed Systems, Programming Languages, and OO Design)
+            (Distributed Systems and Programming Languages)
           </AsideText>
         </Stack>
       </CenterPage>
