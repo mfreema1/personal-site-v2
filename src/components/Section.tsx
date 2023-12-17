@@ -1,4 +1,5 @@
-import { Stack, Title } from "@mantine/core";
+import { Stack } from "@mantine/core";
+import { TitleText } from "./text/TitleText";
 
 export interface SectionProps {
   title: string;
@@ -14,9 +15,7 @@ export function Section({ title, children }: SectionProps) {
   return (
     <Stack gap="xl">
       <Stack gap="xs">
-        <Title order={2} c="blue">
-          {title}
-        </Title>
+        <TitleText order={2} text={title} />
         {first}
       </Stack>
       {...rest}

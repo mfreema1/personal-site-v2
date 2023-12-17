@@ -11,12 +11,10 @@ export function Home() {
         <Stack gap={0} align="center">
           <Avatar src="/favicon.ico" size={128} />
           <Space h="xl" />
-          <TitleText text="My Name is Mark" />
+          <TitleText order={1} text="My Name is Mark" />
           <Space h="md" />
           <BodyText>I am a Software Engineer</BodyText>
-          <AsideText>
-            (Distributed Systems and Programming Languages)
-          </AsideText>
+          <AsideText>(Distributed Systems and Programming Languages)</AsideText>
         </Stack>
       </CenterPage>
     </>

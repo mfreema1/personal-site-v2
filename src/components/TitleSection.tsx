@@ -12,7 +12,7 @@ export function TitleSection({ tText, qtText, qtAuthor }: TitleSectionProps) {
   return (
     <>
       <Stack gap="sm">
-        <TitleText text={tText} />
+        <TitleText order={1} text={tText} />
         <Quote text={qtText} author={qtAuthor} />
       </Stack>
     </>
