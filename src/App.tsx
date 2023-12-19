@@ -1,5 +1,3 @@
-import { ActionIcon, Affix, Transition } from "@mantine/core";
-import { IconMenu } from "@tabler/icons-react";
 import { useState } from "react";
 import { Outlet, RouterProvider, createBrowserRouter } from "react-router-dom";
 import { Header } from "./components/Header";
@@ -53,44 +51,9 @@ interface LayoutProps {
 }
 
 export function Layout({ changeColorScheme }: LayoutProps) {
-  const [headerEnter, setHeaderEnter] = useState(true);
-  const [buttonEnter, setButtonEnter] = useState(false);
-
   return (
     <>
-      <Affix position={{ left: 0, top: 0 }} w={"100vw"} zIndex={1}>
-        <Transition
-          mounted={headerEnter}
-          keepMounted
-          transition="slide-down"
-          onExited={() => setButtonEnter(true)}
-        >
-          {(style) => (
-            <Header
-              style={style}
-              changeColorScheme={changeColorScheme}
-              close={() => setHeaderEnter(false)}
-            />
-          )}
-        </Transition>
-      </Affix>
-      <Affix position={{ left: "2rem", top: "2rem" }} zIndex={0}>
-        <Transition
-          mounted={buttonEnter}
-          keepMounted
-          onExited={() => setHeaderEnter(true)}
-        >
-          {(style) => (
-            <ActionIcon
-              variant="filled"
-              style={style}
-              onClick={() => setButtonEnter(false)}
-            >
-              <IconMenu size={22} />
-            </ActionIcon>
-          )}
-        </Transition>
-      </Affix>
+      <Header changeColorScheme={changeColorScheme} />
       <Outlet />
     </>
   );
