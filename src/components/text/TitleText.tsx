@@ -1,15 +1,15 @@
 import { Title } from "@mantine/core";
 
 export interface TitleTextProps {
-  text: string;
   order: 1 | 2 | 3 | 4 | 5 | 6;
+  children: React.ReactNode;
 }
 
-export function TitleText({ text, order }: TitleTextProps) {
+export function TitleText({ order, children }: TitleTextProps) {
   return (
     <>
       <Title order={order} c="blue" ff="Arvo, serif">
-        {text}
+        {children}
       </Title>
     </>
   );

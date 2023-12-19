@@ -15,7 +15,7 @@ export function Section({ title, children }: SectionProps) {
   return (
     <Stack gap="xl">
       <Stack gap="xs">
-        <TitleText order={2} text={title} />
+        <TitleText order={2}>{title}</TitleText>
         {first}
       </Stack>
       {...rest}

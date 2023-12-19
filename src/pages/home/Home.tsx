@@ -11,7 +11,7 @@ export function Home() {
         <Stack gap={0} align="center">
           <Avatar src="/favicon.ico" size={128} />
           <Space h="xl" />
-          <TitleText order={1} text="My Name is Mark" />
+          <TitleText order={1}>My Name is Mark</TitleText>
           <Space h="md" />
           <BodyText>I am a Software Engineer</BodyText>
           <AsideText>(Distributed Systems and Programming Languages)</AsideText>

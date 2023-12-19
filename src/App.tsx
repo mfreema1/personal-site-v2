@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Outlet, RouterProvider, createBrowserRouter } from "react-router-dom";
 import { Header } from "./components/Header";
 import { TColorScheme, colorSchemes } from "./data/themes";
+import { About } from "./pages/about/About";
 import { Breadth } from "./pages/breadth/Breadth";
 import { S01B } from "./pages/breadth/S01B";
 import { S02B } from "./pages/breadth/S02B";
@@ -27,7 +28,7 @@ export function App() {
       Component: () => <Layout changeColorScheme={changeColorScheme} />,
       children: [
         { path: "/", Component: Home },
-        { path: "/about", Component: () => <p>About</p> },
+        { path: "/about", Component: () => <About /> },
         { path: "/breadth", Component: Breadth },
         {
           path: "/breadth/S01B",
