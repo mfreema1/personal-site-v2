@@ -1,6 +1,6 @@
 import { Group, HoverCard, Title } from "@mantine/core";
-import { Txt } from "./Text";
 import { AsideText } from "./text/AsideText";
+import { DetailText } from "./text/DetailText";
 
 type TTerm = "factory" | "proxy";
 type TTermMapping = {
@@ -15,14 +15,10 @@ const data: TTermMapping = {
   factory: {
     title: "Factory",
     description: (
-      <Txt s="san">
+      <AsideText>
         An object-oriented pattern where the logic associated with creating an
-        object is delegated{" "}
-        <Txt s="san" i mantine={{ span: true }}>
-          away
-        </Txt>{" "}
-        from its constructor.
-      </Txt>
+        object is delegated away from its constructor.
+      </AsideText>
     ),
     pronunciation: "/ˈfakt(ə)rē/",
   },
@@ -55,11 +51,9 @@ export function Term({ id, children }: TermProps) {
           <Title order={3} c={"blue"}>
             {termData.title}
           </Title>
-          <Txt s="san" d fz="sm">
-            {termData.pronunciation}
-          </Txt>
+          <DetailText>{termData.pronunciation}</DetailText>
         </Group>
-        <Txt s={"san"}>{termData.description}</Txt>
+        <AsideText>{termData.description}</AsideText>
       </HoverCard.Dropdown>
     </HoverCard>
   );

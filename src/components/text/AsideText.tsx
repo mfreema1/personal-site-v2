@@ -1,6 +1,6 @@
-import { MantineStyleProps, Text } from "@mantine/core";
+import { MantineStyleProps, Text, TextProps } from "@mantine/core";
 
-export interface AsideTextProps extends MantineStyleProps {
+export interface AsideTextProps extends MantineStyleProps, TextProps {
   children: React.ReactNode;
 }
 

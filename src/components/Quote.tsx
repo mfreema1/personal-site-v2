@@ -1,6 +1,7 @@
 import { Blockquote } from "@mantine/core";
 import { IconQuote } from "@tabler/icons-react";
-import { Txt } from "./Text";
+import { AsideText } from "./text/AsideText";
+import { BodyText } from "./text/BodyText";
 
 export interface QuoteProps {
   text: string;
@@ -8,7 +9,7 @@ export interface QuoteProps {
 }
 
 export function Quote({ text, author }: QuoteProps) {
-  const cite = <Txt s="ser" fz="sm">{`- ${author}`}</Txt>;
+  const cite = <AsideText>{`- ${author}`}</AsideText>;
 
   return (
     <Blockquote
@@ -17,9 +18,7 @@ export function Quote({ text, author }: QuoteProps) {
       iconSize={32}
       icon={<IconQuote size={24} />}
     >
-      <Txt s="ser" i fz="xl">
-        {`"${text}"`}
-      </Txt>
+      <BodyText>{`"${text}"`}</BodyText>
     </Blockquote>
   );
 }

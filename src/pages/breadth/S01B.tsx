@@ -4,7 +4,6 @@ import { Page } from "../../components/Page";
 import { ProConTable } from "../../components/ProConTable";
 import { Section } from "../../components/Section";
 import { Term } from "../../components/Term";
-import { Txt } from "../../components/Text";
 import { Java } from "../../components/code/Java";
 import { JavaSplit } from "../../components/code/JavaSplit";
 
@@ -18,6 +17,7 @@ import { TopPage } from "../../components/pages/TopPage";
 import { AsideText } from "../../components/text/AsideText";
 import { BodyText } from "../../components/text/BodyText";
 import { TBodyText } from "../../components/text/TBodyText";
+import { THeaderText } from "../../components/text/THeaderText";
 import { TColorScheme } from "../../data/themes";
 
 export interface S01BProps {
@@ -143,7 +143,7 @@ export function S01B({ colorScheme }: S01BProps) {
           <Accordion>
             <Accordion.Item key={"factory method"} value={"factory method"}>
               <Accordion.Control>
-                <Txt s="san">Factory Method</Txt>
+                <THeaderText>Factory Method</THeaderText>
               </Accordion.Control>
               <Accordion.Panel>
                 <Stack>
@@ -161,7 +161,7 @@ export function S01B({ colorScheme }: S01BProps) {
             </Accordion.Item>
             <Accordion.Item key={"factoryClass"} value={"factory class"}>
               <Accordion.Control>
-                <Txt s="san">Factory Class</Txt>
+                <THeaderText>Factory Class</THeaderText>
               </Accordion.Control>
               <Accordion.Panel>
                 <Stack>
@@ -192,7 +192,7 @@ export function S01B({ colorScheme }: S01BProps) {
             </Accordion.Item>
             <Accordion.Item key="abstract factory" value="abstract factory">
               <Accordion.Control>
-                <Txt s="san">Abstract Factory Class</Txt>
+                <THeaderText>Abstract Factory Class</THeaderText>
               </Accordion.Control>
               <Accordion.Panel>
                 <Stack>
@@ -227,7 +227,7 @@ export function S01B({ colorScheme }: S01BProps) {
               value="abstract factory factory"
             >
               <Accordion.Control>
-                <Txt s="san">Abstract Factory Factory Class</Txt>
+                <THeaderText>Abstract Factory Factory Class</THeaderText>
               </Accordion.Control>
               <Accordion.Panel>
                 <Stack>

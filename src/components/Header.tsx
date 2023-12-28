@@ -22,7 +22,7 @@ import {
   IconZoomCode,
 } from "@tabler/icons-react";
 import { useNavigate } from "react-router-dom";
-import { Txt } from "./Text";
+import { AsideText } from "./text/AsideText";
 
 const data = {
   home: {
@@ -120,13 +120,7 @@ export function Header({ changeColorScheme }: HeaderProps) {
                       <Tabs.Tab px={12} value={datum.path} key={datum.path}>
                         <Group justify="space-between" gap={4}>
                           {datum.icon}
-                          <Txt
-                            mantine={{ visibleFrom: "sm" }}
-                            s={"san"}
-                            fz="sm"
-                          >
-                            {datum.title}
-                          </Txt>
+                          <AsideText visibleFrom="sm">{datum.title}</AsideText>
                         </Group>
                       </Tabs.Tab>
                     ))}

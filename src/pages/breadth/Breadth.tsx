@@ -1,6 +1,11 @@
 import { Page } from "../../components/Page";
-import { PageTable } from "../../components/PageTable";
 import { TitleSection } from "../../components/TitleSection";
+import {
+  PageCard,
+  PageCardDescription,
+  PageCardTag,
+  PageCardTitle,
+} from "../../components/pagecard";
 import { TopPage } from "../../components/pages/TopPage";
 import { BodyText } from "../../components/text/BodyText";
 
@@ -32,18 +37,37 @@ export function Breadth() {
             questions for further investigation on your own.
           </BodyText>
 
-          <PageTable
-            rows={[
-              {
-                id: "S01B",
-                title: "Object-Oriented Design Patterns",
-                topicIds: ["java", "class-design"],
-              },
-              {
-                id: "S02B",
-                title: "Class-Level Proxy Cutovers",
-                topicIds: ["java", "class-design"],
-              },
+          <PageCard
+            link="/breadth/S01B"
+            title={
+              <PageCardTitle>Object-Oriented Design Patterns</PageCardTitle>
+            }
+            description={
+              <PageCardDescription>
+                At most levels of software, it pays to know a bit about
+                organizing code. Here, we'll explore factories, one of the most
+                foundational patterns for building objects.
+              </PageCardDescription>
+            }
+            tags={[
+              <PageCardTag text="Java" />,
+              <PageCardTag text="Class Design" />,
+            ]}
+          />
+
+          <PageCard
+            link="/breadth/S02B"
+            title={<PageCardTitle>Class-Level Proxy Cutovers</PageCardTitle>}
+            description={
+              <PageCardDescription>
+                Changing the wheels on a car is easy, so long as the car isn't
+                on the highway while you do it. Here, we'll talk about how to do
+                similar things safely and at scale.
+              </PageCardDescription>
+            }
+            tags={[
+              <PageCardTag text="Java" />,
+              <PageCardTag text="Class Design" />,
             ]}
           />
         </Page>
