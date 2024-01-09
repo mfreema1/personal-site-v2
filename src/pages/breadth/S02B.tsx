@@ -16,7 +16,7 @@ import proxyIntroFoo from "../../assets/examples/S02B/proxy-intro/Foo.java?raw";
 import { JavaSplit } from "../../components/code/JavaSplit";
 import { Note } from "../../components/Note";
 import { Section } from "../../components/Section";
-import { Term } from "../../components/Term";
+import { Term } from "../../components/term/Term";
 import { AsideText } from "../../components/text/AsideText";
 
 export interface S02BProps {
@@ -65,7 +65,7 @@ export function S02B({ colorScheme }: S02BProps) {
         <Section title="Proxies">
           <BodyText>
             In cases like this, a cutover{" "}
-            <Term id="proxy">
+            <Term id="Proxy">
               <BodyText span c="blue">
                 proxy
               </BodyText>

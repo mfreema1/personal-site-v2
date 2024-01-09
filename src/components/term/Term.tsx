@@ -1,31 +1,24 @@
 import { Group, HoverCard } from "@mantine/core";
-import { ReactElement, ReactNode } from "react";
-import { TermDescriptionProps } from "./TermDescription";
-import { TermPronunciationProps } from "./TermPronunciation";
-import { TermTitleProps } from "./TermTitle";
+import { ReactNode } from "react";
+import { TermData, TermID, data } from "../../data/terms";
 
 export interface TermProps {
-  title: ReactElement<TermTitleProps>;
-  description: ReactElement<TermDescriptionProps>;
-  pronunciation: ReactElement<TermPronunciationProps>;
+  id: TermID;
   children: ReactNode;
 }
 
-export function Term({
-  title,
-  description,
-  pronunciation,
-  children,
-}: TermProps) {
+export function Term({ id, children }: TermProps) {
+  const datum: TermData = data.filter((datum) => datum.id === id)[0];
+
   return (
     <HoverCard shadow={"md"} radius={"md"} withArrow>
       <HoverCard.Target>{children}</HoverCard.Target>
       <HoverCard.Dropdown w={"24rem"}>
         <Group justify={"space-between"}>
-          {title}
-          {pronunciation}
+          {datum.title}
+          {datum.pronunciation}
         </Group>
-        {description}
+        {datum.description}
       </HoverCard.Dropdown>
     </HoverCard>
   );

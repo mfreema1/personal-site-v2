@@ -3,9 +3,9 @@ import { Note } from "../../components/Note";
 import { Page } from "../../components/Page";
 import { ProConTable } from "../../components/ProConTable";
 import { Section } from "../../components/Section";
-import { Term } from "../../components/Term";
 import { Java } from "../../components/code/Java";
 import { JavaSplit } from "../../components/code/JavaSplit";
+import { Term } from "../../components/term/Term";
 
 import abstractFactoryClass from "../../assets/examples/S01B/AbstractFactoryClass.java?raw";
 import abstractFactoryFactoryClass from "../../assets/examples/S01B/AbstractFactoryFactoryClass.java?raw";
@@ -101,7 +101,7 @@ export function S01B({ colorScheme }: S01BProps) {
           <Section title="Factory">
             <BodyText>
               The essence of{" "}
-              <Term id="factory">
+              <Term id="Factory">
                 <BodyText span c="blue">
                   factory
                 </BodyText>
